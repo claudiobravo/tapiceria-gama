@@ -7,7 +7,7 @@
 - Horario L-V 8:00-19:00, coordenadas 41.35644, 2.10268 (OpenStreetMap via Mapcarta): https://mapcarta.com/es/N10689491427
 - Sociedad TAPICERIA GAMA MVJ SL, Ptge Milans 21, objeto: reparacion y tapiceria de muebles y cortinajes, administrador Victor Manuel Benitez Romero (2021):
   https://www.datoscif.es/empresa/tapiceria-gama-mvj-sl
-- Sociedad anterior Tapiceria Gama S.C.P. (1991, misma direccion, tel. 933389683): https://empresite.eleconomista.es/TAPICERIA-GAMA.html
+- Sociedad anterior Tapiceria Gama S.C.P. (1991; "desde 1991" puesto en la web el 29/10 con el sí de Claudio, a confirmar con Manuel, misma direccion, tel. 933389683): https://empresite.eleconomista.es/TAPICERIA-GAMA.html
 - Servicios: los dio Manuel por WhatsApp.
 # Placeholders
 - Fotos antes/despues, galeria (stock Unsplash), textos de proceso.
