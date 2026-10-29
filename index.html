@@ -12,6 +12,7 @@
 :root{--g:#1d3a2c;--g2:#2c5240;--cream:#f6f1e8;--sand:#e9dfcf;--brass:#b8893b;--ink:#1e1e1c;--muted:#5f5b53;--r:18px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
 body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -60,13 +61,14 @@ section{padding:80px 0}
 .band{background:var(--g);color:var(--cream)}
 .band .sec-head p{color:#cfd8d1}
 .band .sec-head .eyebrow{color:#f1d9a8}
-.split{display:grid;gap:34px;align-items:center}
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center}
+.split>*,.contact>*,.grid>*{min-width:0}
 .feat-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
 .feat-img img{width:100%;height:100%;object-fit:cover}
 .ticks{list-style:none;display:grid;gap:14px;margin-top:8px}
 .ticks li{display:flex;gap:12px;align-items:flex-start}
 .ticks li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--brass) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
-.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:30px}
 .ba-box{position:relative;aspect-ratio:1;border-radius:14px;border:2px dashed rgba(241,217,168,.5);display:grid;place-items:center;text-align:center;padding:14px;color:#e8dcc4;font-size:.85rem;background:rgba(255,255,255,.04)}
 .ba-box svg{width:34px;height:34px;margin:0 auto 8px;opacity:.7}
 .ba-tag{position:absolute;top:10px;left:10px;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--brass);color:#fff}
@@ -80,7 +82,7 @@ section{padding:80px 0}
 .gallery figure{break-inside:avoid;margin-bottom:12px;border-radius:14px;overflow:hidden;position:relative}
 .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 7px;font-size:.66rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6))}
 .gallery figcaption a{text-decoration:none}
-.contact{display:grid;gap:22px}
+.contact{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
 .info{background:#fff;border-radius:var(--r);padding:26px}
 .info dl{display:grid;gap:16px}
 .info dt{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
@@ -100,12 +102,12 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
  .svc{grid-template-columns:repeat(2,1fr)}
  .steps{grid-template-columns:repeat(3,1fr)}
  .gallery{columns:3}
- .contact{grid-template-columns:1fr 1.3fr}
+ .contact{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
 }
 @media(min-width:980px){
  .nav ul{display:flex}
  .svc{grid-template-columns:repeat(3,1fr)}
- .split{grid-template-columns:1fr 1fr;gap:60px}
+ .split{grid-template-columns:repeat(2,minmax(0,1fr));gap:60px}
  section{padding:110px 0}
  .fab{display:none}
  footer{padding-bottom:40px}
@@ -139,19 +141,19 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
  <div class="wrap">
   <div class="sec-head"><span class="eyebrow">Servicios</span><h2>Tapicería mobiliaria para casa y negocio</h2><p>Mándanos una foto de tu mueble por WhatsApp y te decimos qué se puede hacer, qué tejido le va mejor y cuánto cuesta.</p></div>
   <div class="grid svc">
-   <article class="card"><div class="ph"><img src="img/sofa.jpg" alt="Sofá tapizado en tela naranja" loading="lazy"></div><div class="body"><h3>Sofás</h3><p>Retapizado completo, cambio de espumas y rellenos, fundas y arreglos de costuras.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/sillas2.jpg" alt="Silla tapizada gris con patas de madera" loading="lazy"></div><div class="body"><h3>Sillas</h3><p>Asientos y respaldos de comedor, juegos completos y sillas de hostelería.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/sillon.jpg" alt="Sillón tapizado en amarillo" loading="lazy"></div><div class="body"><h3>Sillones</h3><p>Butacas, orejeros y sillones de lectura, con el tejido o la piel que elijas.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/cabecero.jpg" alt="Cama con cabecero tapizado capitoné" loading="lazy"></div><div class="body"><h3>Cabeceros</h3><p>Cabeceros tapizados a medida: lisos, capitoné o con vivos, para cualquier ancho de cama.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/telas.jpg" alt="Muestrario de telas sobre una mesa" loading="lazy"></div><div class="body"><h3>Asesoramiento en tejidos</h3><p>Te ayudamos a escoger tela, color y acabado según el uso que le vayas a dar.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/capitone.jpg" alt="Detalle de tapizado capitoné en pana verde" loading="lazy"></div><div class="body"><h3>Acabados a mano</h3><p>Capitoné, botonaduras, vivos y costuras vistas hechos en el taller.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/sofa.jpg" alt="Sofá tapizado en tela naranja"></div><div class="body"><h3>Sofás</h3><p>Retapizado completo, cambio de espumas y rellenos, fundas y arreglos de costuras.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/sillas2.jpg" alt="Silla tapizada gris con patas de madera"></div><div class="body"><h3>Sillas</h3><p>Asientos y respaldos de comedor, juegos completos y sillas de hostelería.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/sillon.jpg" alt="Sillón tapizado en amarillo"></div><div class="body"><h3>Sillones</h3><p>Butacas, orejeros y sillones de lectura, con el tejido o la piel que elijas.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/cabecero.jpg" alt="Cama con cabecero tapizado capitoné"></div><div class="body"><h3>Cabeceros</h3><p>Cabeceros tapizados a medida: lisos, capitoné o con vivos, para cualquier ancho de cama.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/telas.jpg" alt="Muestrario de telas sobre una mesa"></div><div class="body"><h3>Asesoramiento en tejidos</h3><p>Te ayudamos a escoger tela, color y acabado según el uso que le vayas a dar.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/capitone.jpg" alt="Detalle de tapizado capitoné en pana verde"></div><div class="body"><h3>Acabados a mano</h3><p>Capitoné, botonaduras, vivos y costuras vistas hechos en el taller.</p></div></article>
   </div>
  </div>
 </section>
 
 <section class="band" id="restauracion">
  <div class="wrap split">
-  <div class="feat-img"><img src="img/restauracion.jpg" alt="Dos sillones antiguos tapizados" loading="lazy"></div>
+  <div class="feat-img"><img src="img/restauracion.jpg" alt="Dos sillones antiguos tapizados"></div>
   <div>
    <div class="sec-head" style="margin-bottom:18px"><span class="eyebrow">Fabricación propia y restauración</span><h2>Lo hacemos en nuestro taller, de principio a fin</h2><p>Fabricamos piezas a medida y devolvemos la vida a muebles con valor sentimental, respetando su estructura original.</p></div>
    <ul class="ticks">
@@ -183,12 +185,12 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
  <div class="wrap">
   <div class="sec-head"><span class="eyebrow">Inspiración</span><h2>Galería</h2><p>Imágenes de ejemplo. Aquí irán las fotos de los trabajos de Tapicería Gama.</p></div>
   <div class="gallery">
-   <figure><img src="img/chester.jpg" alt="Sofá chester de piel" loading="lazy"><figcaption>Foto: <a href="https://unsplash.com/photos/brown-leather-chesterfield-sofa-Vfml26Iy4mI" target="_blank" rel="noopener">Hal Gatewood / Unsplash</a></figcaption></figure>
-   <figure><img src="img/silla.jpg" alt="Taburetes tapizados en terciopelo verde" loading="lazy"><figcaption>Foto: <a href="https://unsplash.com/photos/green-leather-padded-brown-wooden-chair-h2TGo5An1dE" target="_blank" rel="noopener">Jouwen Wang / Unsplash</a></figcaption></figure>
-   <figure><img src="img/taller.jpg" alt="Pieza tapizada en un taller" loading="lazy"><figcaption>Foto: <a href="https://unsplash.com/photos/sculptural-furniture-piece-in-workshop-setting-g9oHr--afyw" target="_blank" rel="noopener">Caroline Badran / Unsplash</a></figcaption></figure>
-   <figure><img src="img/hero.jpg" alt="Sofá tapizado en verde" loading="lazy"><figcaption>Foto: <a href="https://unsplash.com/photos/green-fabric-sofa-fZuleEfeA1Q" target="_blank" rel="noopener">Phillip Goldsberry / Unsplash</a></figcaption></figure>
-   <figure><img src="img/vintage.jpg" alt="Sillón vintage en un estudio" loading="lazy"><figcaption>Foto: <a href="https://unsplash.com/photos/vintage-armchair-and-lamp-in-dimly-lit-room-Qec7g-5Xipg" target="_blank" rel="noopener">Valentin Karisch / Unsplash</a></figcaption></figure>
-   <figure><img src="img/capitone.jpg" alt="Capitoné en pana" loading="lazy"><figcaption>Foto: <a href="https://unsplash.com/photos/close-up-of-green-corduroy-fabric-with-tufted-buttons-ayY9MzieC4g" target="_blank" rel="noopener">Linus Belanger / Unsplash</a></figcaption></figure>
+   <figure><img src="img/chester.jpg" alt="Sofá chester de piel"><figcaption>Foto: <a href="https://unsplash.com/photos/brown-leather-chesterfield-sofa-Vfml26Iy4mI" target="_blank" rel="noopener">Hal Gatewood / Unsplash</a></figcaption></figure>
+   <figure><img src="img/silla.jpg" alt="Taburetes tapizados en terciopelo verde"><figcaption>Foto: <a href="https://unsplash.com/photos/green-leather-padded-brown-wooden-chair-h2TGo5An1dE" target="_blank" rel="noopener">Jouwen Wang / Unsplash</a></figcaption></figure>
+   <figure><img src="img/taller.jpg" alt="Pieza tapizada en un taller"><figcaption>Foto: <a href="https://unsplash.com/photos/sculptural-furniture-piece-in-workshop-setting-g9oHr--afyw" target="_blank" rel="noopener">Caroline Badran / Unsplash</a></figcaption></figure>
+   <figure><img src="img/hero.jpg" alt="Sofá tapizado en verde"><figcaption>Foto: <a href="https://unsplash.com/photos/green-fabric-sofa-fZuleEfeA1Q" target="_blank" rel="noopener">Phillip Goldsberry / Unsplash</a></figcaption></figure>
+   <figure><img src="img/vintage.jpg" alt="Sillón vintage en un estudio"><figcaption>Foto: <a href="https://unsplash.com/photos/vintage-armchair-and-lamp-in-dimly-lit-room-Qec7g-5Xipg" target="_blank" rel="noopener">Valentin Karisch / Unsplash</a></figcaption></figure>
+   <figure><img src="img/capitone.jpg" alt="Capitoné en pana"><figcaption>Foto: <a href="https://unsplash.com/photos/close-up-of-green-corduroy-fabric-with-tufted-buttons-ayY9MzieC4g" target="_blank" rel="noopener">Linus Belanger / Unsplash</a></figcaption></figure>
   </div>
  </div>
 </section>
@@ -205,7 +207,7 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
     </dl>
     <a class="btn btn-wa wa" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto%20para%20tapizar%20un%20mueble." target="_blank" rel="noopener" style="margin-top:22px;width:100%">Escribir por WhatsApp</a>
    </div>
-   <div class="map"><iframe title="Mapa Tapicería Gama" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=2.0977%2C41.3534%2C2.1077%2C41.3594&amp;layer=mapnik&amp;marker=41.35644%2C2.10268"></iframe></div>
+   <div class="map"><iframe title="Mapa Tapicería Gama" src="https://www.openstreetmap.org/export/embed.html?bbox=2.0977%2C41.3534%2C2.1077%2C41.3594&amp;layer=mapnik&amp;marker=41.35644%2C2.10268"></iframe></div>
   </div>
   <div class="cta-final" style="margin-top:40px">
    <h2>¿Tienes un mueble que merece una segunda vida?</h2>
