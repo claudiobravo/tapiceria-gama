@@ -2,7 +2,7 @@
 
 Uso:  python poner_fotos.py <carpeta-con-fotos> [--portada N]
 
-- Comprime cada foto a WebP (1600 px de ancho como mucho) en img/trabajos/.
+- Comprime cada foto a WebP (1200 px de ancho como mucho) en img/trabajos/.
 - Sustituye la galería de ejemplo (entre <!--GALERIA--> y <!--/GALERIA-->) por las fotos reales.
 - Con --portada N, la foto número N pasa a ser el fondo de la cabecera y la imagen al compartir.
 No borra nada: las fotos de ejemplo se quedan en img/ por si hay que volver atrás.
@@ -17,7 +17,7 @@ AQUI = Path(__file__).resolve().parent
 EXT = {".jpg", ".jpeg", ".png", ".webp", ".heic"}
 
 
-def comprimir(origen: Path, destino: Path, ancho: int = 1600) -> None:
+def comprimir(origen: Path, destino: Path, ancho: int = 1200) -> None:
     img = ImageOps.exif_transpose(Image.open(origen)).convert("RGB")
     if img.width > ancho:
         img = img.resize((ancho, round(img.height * ancho / img.width)), Image.LANCZOS)
