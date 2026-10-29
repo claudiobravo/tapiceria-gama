@@ -124,6 +124,26 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
  .fab{display:none}
  footer{padding-bottom:40px}
 }
+
+/* Pulido (Impeccable + Emil + Taste) */
+::selection{background:var(--brass);color:#fff}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:6px}
+input,textarea{caret-color:var(--brass)}
+html{scrollbar-color:var(--g2) var(--cream)}
+a{text-underline-offset:.2em}
+h1,h2{text-wrap:balance}
+p{text-wrap:pretty}
+.sec-head h2{margin-top:0}
+.card{background:none;box-shadow:none;border-radius:0}
+.card .ph{border-radius:var(--r)}
+.card .body{padding:16px 2px 4px}
+.btn{transition:transform .16s cubic-bezier(.23,1,.32,1),box-shadow .16s}
+.btn:active{transform:scale(.97)}
+.hero{animation:hero-in 1.4s cubic-bezier(.16,1,.3,1) both}
+@keyframes hero-in{from{filter:saturate(.5) brightness(.8)}to{filter:none}}
+@media(hover:none){.btn:hover{transform:none}.card:hover .ph img{transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(min-width:980px){.svc .card:first-child{grid-column:span 2}.svc .card:first-child .ph{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
@@ -138,20 +158,19 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
 
 <section class="hero">
  <div class="wrap">
-  <span class="eyebrow">Restauración y fabricación propia de sofás</span>
+  
   <h1>Tus muebles, <em>como nuevos</em>. O hechos a tu medida.</h1>
   <p>Tapizamos sofás, sillas, sillones y cabeceros, restauramos piezas con historia y fabricamos en nuestro propio taller.</p>
   <div class="cta">
    <a class="btn btn-wa wa" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto%20para%20tapizar%20un%20mueble." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3z"/></svg>Pide presupuesto por WhatsApp</a>
    <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
   </div>
-  <div class="chips"><span class="chip">Sofás</span><span class="chip">Sillas</span><span class="chip">Sillones</span><span class="chip">Cabeceros</span><span class="chip">Fabricación propia</span><span class="chip">Restauración</span></div>
  </div>
 </section>
 
 <section id="servicios">
  <div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Servicios</span><h2>Tapicería mobiliaria para casa y negocio</h2><p>Mándanos una foto de tu mueble por WhatsApp y te decimos qué se puede hacer, qué tejido le va mejor y cuánto cuesta.</p></div>
+  <div class="sec-head"><h2>Tapicería mobiliaria para casa y negocio</h2><p>Mándanos una foto de tu mueble por WhatsApp y te decimos qué se puede hacer, qué tejido le va mejor y cuánto cuesta.</p></div>
   <div class="grid svc">
    <article class="card"><div class="ph"><img src="img/trabajos/02.webp" alt="Sofá chester de piel negra con capitoné"></div><div class="body"><h3>Sofás</h3><p>Retapizado completo, cambio de espumas y rellenos, fundas y arreglos de costuras.</p></div></article>
    <article class="card"><div class="ph"><img src="img/trabajos/06.webp" alt="Silla tapizada en tela verde con patas negras"></div><div class="body"><h3>Sillas</h3><p>Asientos y respaldos de comedor, juegos completos y sillas de hostelería.</p></div></article>
@@ -167,7 +186,7 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
  <div class="wrap split">
   <div class="feat-img"><img src="img/trabajos/26.webp" alt="El taller de Tapisseria Gama en plena faena"></div>
   <div>
-   <div class="sec-head" style="margin-bottom:18px"><span class="eyebrow">Fabricación propia y restauración</span><h2>Lo hacemos en nuestro taller, de principio a fin</h2><p>Fabricamos piezas a medida y devolvemos la vida a muebles con valor sentimental, respetando su estructura original.</p></div>
+   <div class="sec-head" style="margin-bottom:18px"><h2>Lo hacemos en nuestro taller, de principio a fin</h2><p>Fabricamos piezas a medida y devolvemos la vida a muebles con valor sentimental, respetando su estructura original.</p></div>
    <ul class="ticks">
     <li>Fabricación propia de sofás, cabeceros y piezas a medida</li>
     <li>Restauración de sillas y sillones antiguos</li>
@@ -184,7 +203,7 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
 
 <section>
  <div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Cómo trabajamos</span><h2>Presupuesto en tres pasos</h2></div>
+  <div class="sec-head"><h2>Presupuesto en tres pasos</h2></div>
   <div class="grid steps">
    <div class="step"><h3>Mándanos una foto</h3><p>Por WhatsApp, con las medidas aproximadas del mueble.</p></div>
    <div class="step"><h3>Te asesoramos</h3><p>Te proponemos tejido y acabado, y te damos el precio.</p></div>
@@ -195,7 +214,7 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
 
 <section id="galeria" style="padding-top:0">
  <div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Nuestro taller</span><h2>Trabajos reales</h2><p>Algunos de los muebles que han pasado por Tapisseria Gama.</p></div>
+  <div class="sec-head"><h2>Trabajos reales</h2><p>Algunos de los muebles que han pasado por Tapisseria Gama.</p></div>
   <div class="gallery">
 <!--GALERIA-->
    <figure><img src="img/trabajos/01.webp" loading="lazy" alt="Sofá rojo con vivo dorado recién tapizado en el taller"></figure>
@@ -231,7 +250,7 @@ footer .credit{margin-top:8px;font-size:.74rem;opacity:.8}
 
 <section id="contacto" style="padding-top:0">
  <div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Contacto</span><h2>Ven al taller o escríbenos</h2></div>
+  <div class="sec-head"><h2>Ven al taller o escríbenos</h2></div>
   <div class="contact">
    <div class="info">
     <dl>
