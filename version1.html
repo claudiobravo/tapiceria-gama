@@ -148,10 +148,32 @@ p{text-wrap:pretty}
 @media(hover:none){.btn:hover{transform:none}.card:hover .ph img{transform:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(min-width:980px){.svc .card:first-child{grid-column:span 2}.svc .card:first-child .ph{aspect-ratio:16/9}}
+
+/* Mejoras del lienzo (30/10) */
+.stats{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2)}
+.stats b{display:block;font:700 1.7rem/1 Fraunces,serif;color:#f1d9a8}
+.stats span{display:block;font-size:.88rem;margin-top:6px;opacity:.85}
+.seq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.seq figure{margin:0}
+.seq img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
+.seq figcaption{margin-top:10px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#f1d9a8}
+.seq figure:last-child figcaption{color:#8ee6ac}
+.gal-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:34px}
+.gal-head .sec-head{margin-bottom:0}
+.btn-out{border:1.5px solid var(--g);color:var(--g)}
+.gal6{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px;gap:12px}
+.gal6 img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+@media(min-width:720px){.gal6{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:230px}.gal6 .tall{grid-row:span 2}}
+.revs-sec{background:var(--sand)}
+.revs{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+.revs figure{margin:0;background:#fff;border-radius:var(--r);padding:28px;color:var(--muted)}
+.revs .st{color:#8a6424;letter-spacing:2px}
+.revs blockquote{margin-top:12px;font-style:italic}
+@media(min-width:720px){.revs{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
 <body>
-<div class="demo-bar">Demo gratuita para Tapisseria Gama · la galería ya muestra trabajos reales del taller</div>
+<div class="demo-bar">Demo gratuita para Tapisseria Gama · todas las fotos son trabajos reales del taller</div>
 <header>
  <div class="wrap nav">
   <a class="logo" href="#"><span class="logo-mark">G</span><span><b>Tapisseria Gama</b><small>Tapicería · desde 1991</small></span></a>
@@ -162,12 +184,17 @@ p{text-wrap:pretty}
 
 <section class="hero">
  <div class="wrap">
-  
+  <span class="eyebrow">Taller propio en L'Hospitalet · desde 1991</span>
   <h1>Tus muebles, <em>como nuevos</em>. O hechos a tu medida.</h1>
-  <p>Desde 1991 en L'Hospitalet. Tapizamos sofás, sillas, sillones y cabeceros, restauramos piezas con historia y fabricamos en nuestro propio taller.</p>
+  <p>Tapizamos sofás, sillas, sillones y cabeceros, restauramos piezas con historia y fabricamos en nuestro propio taller.</p>
   <div class="cta">
    <a class="btn btn-wa wa" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto%20para%20tapizar%20un%20mueble." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3z"/></svg>Pide presupuesto por WhatsApp</a>
-   <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+   <a class="btn btn-ghost" href="#galeria">Ver trabajos</a>
+  </div>
+  <div class="stats">
+   <div><b>+30 años</b><span>de oficio</span></div>
+   <div><b>Taller propio</b><span>en Bellvitge</span></div>
+   <div><b>Precio cerrado</b><span>antes de empezar</span></div>
   </div>
  </div>
 </section>
@@ -177,11 +204,10 @@ p{text-wrap:pretty}
   <div class="sec-head"><h2>Tapicería mobiliaria para casa y negocio</h2><p>Mándanos una foto de tu mueble por WhatsApp y te decimos qué se puede hacer, qué tejido le va mejor y cuánto cuesta.</p></div>
   <div class="grid svc">
    <article class="card"><div class="ph"><img src="img/trabajos/02.webp" alt="Sofá chester de piel negra con capitoné"></div><div class="body"><h3>Sofás</h3><p>Retapizado completo, cambio de espumas y rellenos, fundas y arreglos de costuras.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/trabajos/06.webp" alt="Silla tapizada en tela verde con patas negras"></div><div class="body"><h3>Sillas</h3><p>Asientos y respaldos de comedor, juegos completos y sillas de hostelería.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/trabajos/03.webp" alt="Butaca de terciopelo granate con flecos"></div><div class="body"><h3>Sillones</h3><p>Butacas, orejeros y sillones de lectura, con el tejido o la piel que elijas.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/cabecero.jpg" alt="Cama con cabecero tapizado capitoné"></div><div class="body"><h3>Cabeceros</h3><p>Cabeceros tapizados a medida: lisos, capitoné o con vivos, para cualquier ancho de cama.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/telas.jpg" alt="Muestrario de telas sobre una mesa"></div><div class="body"><h3>Asesoramiento en tejidos</h3><p>Te ayudamos a escoger tela, color y acabado según el uso que le vayas a dar.</p></div></article>
-   <article class="card"><div class="ph"><img src="img/trabajos/04.webp" alt="Butaca capitoné gris con faldón de flecos"></div><div class="body"><h3>Acabados a mano</h3><p>Capitoné, botonaduras, vivos y costuras vistas hechos en el taller.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/trabajos/06.webp" alt="Silla tapizada en tela verde con patas negras"></div><div class="body"><h3>Sillas y hostelería</h3><p>Comedor, juegos completos y sillas de bares y restaurantes.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/trabajos/03.webp" alt="Butaca de terciopelo granate con flecos"></div><div class="body"><h3>Sillones</h3><p>Butacas, orejeros y sillones de lectura, en tela o piel.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/trabajos/14.webp" alt="Sofá curvo marrón fabricado en el taller"></div><div class="body"><h3>Fabricación a medida</h3><p>Sofás, cabeceros y piezas hechas desde cero, a tu medida.</p></div></article>
+   <article class="card"><div class="ph"><img src="img/trabajos/04.webp" alt="Butaca capitoné gris con faldón de flecos"></div><div class="body"><h3>Acabados a mano</h3><p>Capitoné, botonaduras, vivos y costuras vistas.</p></div></article>
   </div>
  </div>
 </section>
@@ -190,16 +216,11 @@ p{text-wrap:pretty}
  <div class="wrap split">
   <div class="feat-img"><img src="img/trabajos/26.webp" alt="El taller de Tapisseria Gama en plena faena"></div>
   <div>
-   <div class="sec-head" style="margin-bottom:18px"><h2>Más de 30 años haciéndolo en nuestro taller</h2><p>Fabricamos piezas a medida y devolvemos la vida a muebles con valor sentimental, respetando su estructura original.</p></div>
-   <ul class="ticks">
-    <li>Fabricación propia de sofás, cabeceros y piezas a medida</li>
-    <li>Restauración de sillas y sillones antiguos</li>
-    <li>Revisión de estructura, muelles y espumas</li>
-    <li>Tú eliges el tejido: te enseñamos muestrarios</li>
-   </ul>
-   <div class="ba">
-    <figure class="ba-box ba-foto"><span class="ba-tag">Proceso</span><img src="img/trabajos/19.webp" alt="Butaca en fase de espumas, antes de tapizar"></figure>
-    <figure class="ba-box ba-foto"><span class="ba-tag after">Terminado</span><img src="img/trabajos/07.webp" alt="Butaca giratoria tapizada en gris"></figure>
+   <div class="sec-head" style="margin-bottom:0"><h2>Más de 30 años haciéndolo en nuestro taller</h2><p>Desde la estructura de madera hasta el último vivo: todo pasa por nuestras manos, en Bellvitge.</p></div>
+   <div class="seq">
+    <figure><img src="img/trabajos/24.webp" alt="Estructura de rinconera con cinchas"><figcaption>1 · Estructura</figcaption></figure>
+    <figure><img src="img/trabajos/19.webp" alt="Butaca en fase de espumas"><figcaption>2 · Espumas</figcaption></figure>
+    <figure><img src="img/trabajos/07.webp" alt="Butaca tapizada en gris, terminada"><figcaption>3 · Terminado</figcaption></figure>
    </div>
   </div>
  </div>
@@ -218,41 +239,33 @@ p{text-wrap:pretty}
 
 <section id="galeria" style="padding-top:0">
  <div class="wrap">
-  <div class="sec-head"><h2>Trabajos reales</h2><p>Algunos de los muebles que han pasado por Tapisseria Gama.</p></div>
-  <div class="gallery">
-<!--GALERIA-->
-   <figure><img src="img/trabajos/01.webp" loading="lazy" alt="Sofá rojo con vivo dorado recién tapizado en el taller"></figure>
-   <figure><img src="img/trabajos/02.webp" loading="lazy" alt="Sofá chester de piel negra con capitoné"></figure>
-   <figure><img src="img/trabajos/03.webp" loading="lazy" alt="Butaca de terciopelo granate con flecos"></figure>
-   <figure><img src="img/trabajos/04.webp" loading="lazy" alt="Butaca capitoné gris con faldón de flecos"></figure>
-   <figure><img src="img/trabajos/05.webp" loading="lazy" alt="Sofá curvo con tapizado floral y respaldo verde"></figure>
-   <figure><img src="img/trabajos/06.webp" loading="lazy" alt="Silla tapizada en tela verde con patas negras"></figure>
-   <figure><img src="img/trabajos/07.webp" loading="lazy" alt="Butaca giratoria tapizada en gris"></figure>
-   <figure><img src="img/trabajos/08.webp" loading="lazy" alt="Butaca blanca con funda y vivos"></figure>
-   <figure><img src="img/trabajos/09.webp" loading="lazy" alt="Sillón relax tapizado en tela clara"></figure>
-   <figure><img src="img/trabajos/10.webp" loading="lazy" alt="Sofá curvo con chaise longue instalado en un salón"></figure>
-   <figure><img src="img/trabajos/11.webp" loading="lazy" alt="Sofá chaise longue marrón instalado en una casa"></figure>
-   <figure><img src="img/trabajos/12.webp" loading="lazy" alt="Sofá rinconera y puf tapizados en blanco roto"></figure>
-   <figure><img src="img/trabajos/13.webp" loading="lazy" alt="Sofá chaise longue gris instalado junto a la ventana"></figure>
-   <figure><img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo marrón terminado en el taller"></figure>
-   <figure><img src="img/trabajos/15.webp" loading="lazy" alt="Chaise longue tapizada en verde oscuro"></figure>
-   <figure><img src="img/trabajos/16.webp" loading="lazy" alt="Sillón relax tapizado en gris claro"></figure>
-   <figure><img src="img/trabajos/17.webp" loading="lazy" alt="Sofá cama en fabricación"></figure>
-   <figure><img src="img/trabajos/18.webp" loading="lazy" alt="Sofá con estructura de madera y tapizado claro"></figure>
-   <figure><img src="img/trabajos/19.webp" loading="lazy" alt="Butaca en fase de espumas, antes de tapizar"></figure>
-   <figure><img src="img/trabajos/20.webp" loading="lazy" alt="Sofá curvo en fase de espumas"></figure>
-   <figure><img src="img/trabajos/21.webp" loading="lazy" alt="Chaise longue con espumas montadas"></figure>
-   <figure><img src="img/trabajos/22.webp" loading="lazy" alt="Sofá con espumas a medida antes de tapizar"></figure>
-   <figure><img src="img/trabajos/23.webp" loading="lazy" alt="Rinconera en fase de espumas"></figure>
-   <figure><img src="img/trabajos/24.webp" loading="lazy" alt="Estructura de rinconera con cinchas"></figure>
-   <figure><img src="img/trabajos/25.webp" loading="lazy" alt="Estructura curva de madera con cinchas"></figure>
-   <figure><img src="img/trabajos/26.webp" loading="lazy" alt="El taller de Tapisseria Gama en plena faena"></figure>
-<!--/GALERIA-->
+  <div class="gal-head">
+   <div class="sec-head"><h2>Trabajos reales</h2><p>Muebles terminados en Tapisseria Gama.</p></div>
+   <a class="btn btn-out wa" href="https://wa.me/34697526500?text=Hola%2C%20%C2%BFme%20pod%C3%A9is%20ense%C3%B1ar%20m%C3%A1s%20trabajos%3F" target="_blank" rel="noopener">Pídenos más fotos</a>
+  </div>
+  <div class="gal6">
+   <img class="tall" src="img/trabajos/05.webp" loading="lazy" alt="Sofá curvo con tapizado floral y respaldo verde">
+   <img src="img/trabajos/10.webp" loading="lazy" alt="Sofá curvo con chaise longue en un salón">
+   <img src="img/trabajos/12.webp" loading="lazy" alt="Sofá rinconera y puf en blanco roto">
+   <img class="tall" src="img/trabajos/08.webp" loading="lazy" alt="Butaca blanca con funda y vivos">
+   <img src="img/trabajos/15.webp" loading="lazy" alt="Chaise longue tapizada en verde oscuro">
+   <img src="img/trabajos/03.webp" loading="lazy" alt="Butaca de terciopelo granate con flecos">
   </div>
  </div>
 </section>
 
-<section id="contacto" style="padding-top:0">
+<section class="revs-sec">
+ <div class="wrap">
+  <div class="sec-head"><h2>Lo que dicen los clientes</h2><p>Aquí irán vuestras reseñas de Google.</p></div>
+  <div class="revs">
+   <figure><p class="st" aria-hidden="true">★★★★★</p><blockquote>Reseña real de Google de un cliente.</blockquote></figure>
+   <figure><p class="st" aria-hidden="true">★★★★★</p><blockquote>Reseña real de Google de un cliente.</blockquote></figure>
+   <figure><p class="st" aria-hidden="true">★★★★★</p><blockquote>Reseña real de Google de un cliente.</blockquote></figure>
+  </div>
+ </div>
+</section>
+
+<section id="contacto">
  <div class="wrap">
   <div class="sec-head"><h2>Ven al taller o escríbenos</h2></div>
   <div class="contact">
@@ -277,7 +290,6 @@ p{text-wrap:pretty}
 <footer>
  <div class="wrap">
   <div>© Tapisseria Gama S.C.P. · Av. Mare de Déu de Bellvitge, 325 · L'Hospitalet de Llobregat</div>
-  <div class="credit">Fotos de cabeceros y telas de ejemplo: Unsplash (licencia Unsplash). El resto son trabajos reales del taller.</div>
   <div class="credit">Demo preparada por Claudio Bravo</div>
  </div>
 </footer>
