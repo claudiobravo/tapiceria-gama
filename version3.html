@@ -77,6 +77,31 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;font-size:.95rem;color:rgba(255,255,255,.8)}
 .facts span{display:inline-flex;align-items:center;gap:8px}
 .facts svg{width:18px;height:18px;color:var(--aqua)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:end}
+.hero-grid>*{min-width:0}
+@media(min-width:1000px){.hero-grid{grid-template-columns:1.35fr 1fr;gap:56px}}
+.eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua);font-weight:600;margin-bottom:18px}
+.steps3{background:#fff;color:var(--ink);padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.steps3>p{font:700 1.35rem/1.2 var(--serif);color:var(--deep)}
+.steps3 ol{list-style:none;display:grid;gap:16px;margin-top:20px;counter-reset:p}
+.steps3 li{display:flex;gap:14px;align-items:flex-start;font-size:.97rem;line-height:1.5}
+.steps3 li::before{counter-increment:p;content:counter(p);flex:none;width:34px;height:34px;border-radius:50%;background:var(--deep);color:var(--aqua);display:grid;place-items:center;font:700 1rem/1 var(--serif)}
+.steps3 .btn{width:100%;margin-top:22px;background:#25d366;color:#06262a}
+@media(hover:hover){.steps3 .btn:hover{background:#3ee07b}}
+.trust{background:var(--deep2);color:#fff}
+.trust .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:26px 0}
+.trust b{display:block;font:700 clamp(1.3rem,2.4vw,1.9rem)/1 var(--serif);color:var(--aqua)}
+.trust span{display:block;font-size:.88rem;margin-top:6px;color:rgba(255,255,255,.8)}
+@media(min-width:900px){.trust .wrap{grid-template-columns:repeat(4,1fr)}}
+.story{display:grid;gap:40px;align-items:center}
+.story img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.story p{color:var(--muted);font-size:1.05rem;line-height:1.7;margin-top:16px}
+@media(min-width:900px){.story{grid-template-columns:1fr 1fr;gap:56px}}
+.revs{display:grid;gap:18px;grid-template-columns:1fr}
+.revs figure{margin:0;padding:28px;border:1.5px dashed #b9c4c2;background:var(--white);color:var(--muted)}
+.revs .st{color:#b07a12;letter-spacing:2px}
+.revs blockquote{margin-top:12px;font-style:italic}
+@media(min-width:900px){.revs{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.hero{background-position:62% 50%}.hero::before{background:linear-gradient(0deg,rgba(6,30,33,.96) 0%,rgba(6,30,33,.82) 55%,rgba(6,30,33,.45) 100%)}}
 
 /* servicios */
@@ -181,14 +206,16 @@ footer b{color:#fff;font-family:var(--serif)}
 <header>
  <div class="wrap nav">
   <a class="logo" href="#"><span class="logo-mark">G</span><span><b>Tapisseria Gama</b><small>L'Hospitalet · desde 1991</small></span></a>
-  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#antes">Antes y después</a></li><li><a href="#taller">Galería</a></li><li><a href="#preguntas">Preguntas</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#historia">El taller</a></li><li><a href="#taller">Galería</a></li><li><a href="#preguntas">Preguntas</a></li><li><a href="#contacto">Contacto</a></li></ul>
   <a class="tel" href="tel:+34933389683"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>93 338 96 83</a>
   <a class="btn" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Presupuesto</a>
  </div>
 </header>
 
 <section class="hero" aria-labelledby="t">
- <div class="wrap">
+ <div class="wrap hero-grid">
+  <div>
+  <p class="eyebrow">Taller propio en Bellvitge · desde 1991</p>
   <h1 id="t">Tu tapicero artesano en <em>Bellvitge</em></h1>
   <p>Desde 1991 tapizamos, restauramos y fabricamos sofás, sillas, sillones y cabeceros en <strong>nuestro propio taller</strong> de L'Hospitalet.</p>
   <div class="cta">
@@ -200,15 +227,34 @@ footer b{color:#fff;font-family:var(--serif)}
    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Fabricación propia</span>
    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Presupuesto por WhatsApp</span>
   </div>
+  </div>
+  <div class="steps3">
+   <p>Tu presupuesto en tres pasos</p>
+   <ol>
+    <li><span><b>Haz una foto</b> a tu sofá, silla o butaca.</span></li>
+    <li><span><b>Mándanosla por WhatsApp</b> con unas medidas aproximadas.</span></li>
+    <li><span><b>Te damos precio cerrado</b> y el tejido que mejor le va.</span></li>
+   </ol>
+   <a class="btn" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7S22.1 26.4 16 26.4z"/></svg>697 526 500</a>
+  </div>
  </div>
 </section>
+
+<div class="trust">
+ <div class="wrap">
+  <div><b>+30 años</b><span>de oficio en L'Hospitalet</span></div>
+  <div><b>Taller propio</b><span>todo se hace en Bellvitge</span></div>
+  <div><b>A medida</b><span>fabricación desde cero</span></div>
+  <div><b>Casas y negocios</b><span>particulares y hostelería</span></div>
+ </div>
+</div>
 
 <section id="servicios">
  <div class="wrap">
   <div class="head" data-r><h2>Nuestros servicios <em>artesanales</em></h2><p>Mándanos una foto de tu mueble y te decimos qué se puede hacer, qué tejido le va mejor y cuánto cuesta.</p></div>
   <div class="svc">
    <article data-r><div class="ph"><img src="img/trabajos/01.webp" loading="lazy" alt="Sofá de terciopelo teja recién tapizado"></div><div class="body"><h3>Tapizado de sofás</h3><p>Retapizado completo, cambio de espumas y rellenos, fundas y arreglos de costuras.</p></div></article>
-   <article data-r style="--i:1"><div class="ph"><img src="img/trabajos/06.webp" loading="lazy" alt="Silla tapizada en tela verde con patas negras"></div><div class="body"><h3>Tapizado de sillas</h3><p>Asientos y respaldos de comedor, juegos completos y sillas de hostelería.</p></div></article>
+   <article data-r style="--i:1"><div class="ph"><img src="img/trabajos/06.webp" loading="lazy" alt="Silla tapizada en tela verde con patas negras"></div><div class="body"><h3>Sillas y hostelería</h3><p>Sillas de comedor, juegos completos y sillas de bares y restaurantes.</p></div></article>
    <article data-r style="--i:2"><div class="ph"><img src="img/trabajos/03.webp" loading="lazy" alt="Butaca de terciopelo granate con flecos"></div><div class="body"><h3>Sillones y butacas</h3><p>Butacas, orejeros y sillones relax, con el tejido o la piel que elijas.</p></div></article>
    <article data-r><div class="ph"><img src="img/trabajos/04.webp" loading="lazy" alt="Butaca capitoné gris con faldón de flecos"></div><div class="body"><h3>Capitoné y acabados</h3><p>Botonaduras, vivos, flecos y costuras vistas hechos a mano en el taller.</p></div></article>
    <article data-r style="--i:1"><div class="ph"><img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo marrón terminado en el taller"></div><div class="body"><h3>Fabricación a medida</h3><p>Sofás, cabeceros y piezas hechas desde cero, a la medida de tu casa.</p></div></article>
@@ -230,7 +276,20 @@ footer b{color:#fff;font-family:var(--serif)}
  </div>
 </section>
 
-<section id="taller">
+<section id="historia">
+ <div class="wrap story">
+  <img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo terminado en el taller de Bellvitge" data-r>
+  <div data-r style="--i:1">
+   <p class="eyebrow" style="color:var(--teal);margin:0">Desde 1991</p>
+   <h2 style="font-size:clamp(2rem,4.6vw,3rem);color:var(--deep);margin-top:12px">Un taller de <em style="color:var(--teal)">barrio</em>, con oficio de verdad</h2>
+   <p>Cada pieza se trabaja a mano en nuestro taller de la Av. Mare de Déu de Bellvitge: desmontamos, revisamos muelles, cinchas y espumas, y tapizamos con el tejido que elijas.</p>
+   <p>Más de treinta años arreglando los sofás y las sillas del barrio, de casas y de negocios.</p>
+   <a class="btn btn-deep" style="margin-top:26px" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Cuéntanos qué mueble tienes</a>
+  </div>
+ </div>
+</section>
+
+<section id="taller" style="background:var(--white)">
  <div class="wrap">
   <div class="head" data-r><h2>Una muestra de <em>nuestro taller</em></h2><p>Trabajos reales que han pasado por Tapisseria Gama.</p></div>
   <div class="gal">
@@ -283,6 +342,17 @@ footer b{color:#fff;font-family:var(--serif)}
    <details><summary>¿Trabajáis con muebles antiguos?</summary><p>Sí. Restauramos piezas antiguas y con valor sentimental, respetando su estructura original y revisando muelles, cinchas y espumas.</p></details>
    <details><summary>¿Puedo elegir la tela?</summary><p>Claro. En el taller tenemos muestrarios para que veas y toques cada tejido antes de decidir.</p></details>
    <details><summary>¿Hacéis muebles a medida?</summary><p>Sí, tenemos fabricación propia: sofás, cabeceros y piezas a la medida de tu casa o tu negocio.</p></details>
+  </div>
+ </div>
+</section>
+
+<section id="opiniones">
+ <div class="wrap">
+  <div class="head center" data-r><h2>Lo que dicen los <em>clientes</em></h2><p>Aquí irán vuestras reseñas de Google.</p></div>
+  <div class="revs">
+   <figure data-r><p class="st" aria-hidden="true">★★★★★</p><blockquote>Reseña real de Google de un cliente.</blockquote></figure>
+   <figure data-r style="--i:1"><p class="st" aria-hidden="true">★★★★★</p><blockquote>Reseña real de Google de un cliente.</blockquote></figure>
+   <figure data-r style="--i:2"><p class="st" aria-hidden="true">★★★★★</p><blockquote>Reseña real de Google de un cliente.</blockquote></figure>
   </div>
  </div>
 </section>
