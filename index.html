@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tapisseria Gama · Tapicero artesano en L'Hospitalet desde 1991</title>
-<meta name="description" content="Tapisseria Gama: retapizamos, restauramos y fabricamos sofás, sillas, sillones y cabeceros en nuestro taller de Bellvitge, L'Hospitalet, desde 1991. Pide presupuesto por WhatsApp.">
+<meta name="description" content="Tapisseria Gama: retapizamos, restauramos y fabricamos sofás, sillas, sillones y cabeceros en nuestro taller de L'Hospitalet de Llobregat desde 1991. Pide presupuesto por WhatsApp.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0b2a2e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b2a2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' text-anchor='middle' fill='%2346b6c3'%3EG%3C/text%3E%3C/svg%3E">
@@ -67,9 +67,11 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 @media(min-width:1000px){.nav ul{display:flex}.nav .tel{display:flex}}
 
 /* portada */
-.hero{position:relative;min-height:calc(100svh - 72px);display:flex;align-items:flex-end;color:#fff;background:var(--deep) url(img/trabajos/26.webp) 70% 50%/cover no-repeat}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,33,.94) 0%,rgba(6,30,33,.82) 42%,rgba(6,30,33,.35) 100%),linear-gradient(0deg,rgba(6,30,33,.7),transparent 45%)}
-.hero .wrap{position:relative;padding:96px 0 64px}
+.hero{position:relative;color:#fff;background:var(--deep);overflow:hidden;padding:0}
+.hero-bg{position:relative;aspect-ratio:4/3;max-height:62svh;width:100%}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 72%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--deep) 0%,rgba(11,42,46,0) 38%)}
+.hero .wrap{position:relative;padding:8px 0 56px}
 .hero h1{font-size:clamp(2.8rem,7.4vw,5.6rem);font-weight:800;max-width:11ch;line-height:1.02}
 .hero p{font-size:clamp(1.05rem,1.4vw,1.2rem);max-width:44ch;margin-top:22px;color:rgba(255,255,255,.86)}
 .hero p strong{color:#fff;font-weight:600}
@@ -77,21 +79,11 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;font-size:.95rem;color:rgba(255,255,255,.8)}
 .facts span{display:inline-flex;align-items:center;gap:8px}
 .facts svg{width:18px;height:18px;color:var(--aqua)}
+@media(min-width:1000px){.hero{min-height:calc(100svh - 72px);display:flex;align-items:center}.hero-bg{position:absolute;top:0;right:0;bottom:0;width:60%;max-height:none;aspect-ratio:auto}.hero-bg img{object-position:52% 70%}.hero-bg::after{background:linear-gradient(90deg,var(--deep) 0%,rgba(11,42,46,.35) 6%,rgba(11,42,46,0) 15%),linear-gradient(0deg,rgba(11,42,46,.45),rgba(11,42,46,0) 25%)}.hero .wrap{padding:72px 0}.hero h1{font-size:clamp(3rem,4.6vw,4.2rem);max-width:none}.hero p{margin-top:18px}.hero .cta{margin-top:26px}.facts{margin-top:26px}}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:end}
 .hero-grid>*{min-width:0}
-@media(min-width:1000px){.hero-grid{grid-template-columns:1.35fr 1fr;gap:56px}}
+@media(min-width:1000px){.hero-grid>div:first-child{max-width:450px}}
 .eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua);font-weight:600;margin-bottom:18px}
-.hero-photo{position:relative}
-.hero-photo>img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%;box-shadow:0 24px 60px rgba(0,0,0,.4)}
-.hero-photo .steps3{position:relative;margin:-60px 16px 0}
-@media(min-width:1000px){.hero-photo{margin:0 0 150px 60px}.hero-photo>img{max-height:600px}.hero-photo .steps3{position:absolute;left:-120px;bottom:-190px;margin:0;width:min(370px,92%);padding:24px}.hero-photo .steps3 ol{gap:10px;margin-top:14px}.hero-photo .steps3 .btn{margin-top:16px}}
-.steps3{background:#fff;color:var(--ink);padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.steps3>p{font:700 1.35rem/1.2 var(--serif);color:var(--deep)}
-.steps3 ol{list-style:none;display:grid;gap:16px;margin-top:20px;counter-reset:p}
-.steps3 li{display:flex;gap:14px;align-items:flex-start;font-size:.97rem;line-height:1.5}
-.steps3 li::before{counter-increment:p;content:counter(p);flex:none;width:34px;height:34px;border-radius:50%;background:var(--deep);color:var(--aqua);display:grid;place-items:center;font:700 1rem/1 var(--serif)}
-.steps3 .btn{width:100%;margin-top:22px;background:#25d366;color:#06262a}
-@media(hover:hover){.steps3 .btn:hover{background:#3ee07b}}
 .trust{background:var(--deep2);color:#fff}
 .trust .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:26px 0}
 .trust b{display:block;font:700 clamp(1.3rem,2.4vw,1.9rem)/1 var(--serif);color:var(--aqua)}
@@ -106,7 +98,6 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .revs .st{color:#b07a12;letter-spacing:2px}
 .revs blockquote{margin-top:12px;font-style:italic}
 @media(min-width:900px){.revs{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){.hero{background-position:62% 50%}.hero::before{background:linear-gradient(0deg,rgba(6,30,33,.96) 0%,rgba(6,30,33,.82) 55%,rgba(6,30,33,.45) 100%)}}
 
 /* servicios */
 .svc{display:grid;gap:22px;grid-template-columns:1fr}
@@ -132,23 +123,53 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .ba .tag{position:absolute;top:16px;padding:6px 12px;font-size:.82rem;font-weight:600;background:rgba(6,30,33,.8);color:#fff}
 .ba .tag.l{left:16px}.ba .tag.r{right:16px;background:var(--aqua);color:var(--aqua-ink)}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-.pasos{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
-.pasos figure{margin:0;background:var(--white);border:1px solid var(--line)}
-.pasos img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.pasos figcaption{padding:10px 12px;font-size:.9rem;color:var(--muted)}
-.pasos figcaption b{color:var(--teal);margin-right:6px}
-@media(min-width:720px){.pasos{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(min-width:1100px){.pasos{grid-template-columns:repeat(7,minmax(0,1fr))}}
 .telas{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:22px}
 .telas img{width:100%;aspect-ratio:3/4;object-fit:cover}
 .telas img:first-child{grid-column:span 2;aspect-ratio:2/1}
 @media(min-width:900px){.telas{grid-template-columns:repeat(5,minmax(0,1fr))}.telas img:first-child{grid-column:auto;aspect-ratio:3/4}}
 .ba-grid{display:grid;gap:28px;grid-template-columns:minmax(0,1fr);max-width:1100px;margin:0 auto}
 .ba-grid figure{margin:0}
+.ba-grid.one{grid-template-columns:minmax(0,1fr)!important;max-width:760px}
 .ba-grid .ba{max-width:none;margin:0}
 .ba-grid figcaption{text-align:center;color:rgba(255,255,255,.8);margin-top:12px;font-weight:500}
 @media(min-width:900px){.ba-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .ba-note{text-align:center;color:rgba(255,255,255,.7);font-size:.95rem;margin-top:16px}
+
+/* el sofá paso a paso */
+.film-sec{background:var(--deep);color:#fff;padding-top:0}
+.film-sec .head p{color:rgba(255,255,255,.75)}
+.film-sec .head p.eyebrow{color:var(--aqua);margin-top:0;padding-top:8px}
+.film{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+.film-stage{position:relative;aspect-ratio:3/4;max-height:80svh;overflow:hidden;background:#06201f;margin-inline:auto;width:100%}
+.film-stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform 3.2s cubic-bezier(.16,1,.3,1)}
+.film-stage>img.on{opacity:1;transform:scale(1)}
+.film-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,30,33,.92) 0%,rgba(6,30,33,0) 42%);pointer-events:none}
+.film-cap{position:absolute;left:20px;right:78px;bottom:20px;z-index:1;display:flex;gap:16px;align-items:flex-end}
+.film-n{font:800 3.2rem/.85 var(--serif);color:var(--aqua);font-variant-numeric:tabular-nums;flex:none}
+.film-n small{font:600 .85rem/1 var(--sans);color:rgba(255,255,255,.6);margin-left:4px}
+.film-t{display:block;font:700 1.3rem/1.15 var(--serif)}
+.film-d{display:block;font-size:.92rem;color:rgba(255,255,255,.82);margin-top:4px}
+.film-play{position:absolute;right:18px;bottom:22px;z-index:2;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--deep);display:grid;place-items:center;cursor:pointer;transition:transform .14s cubic-bezier(.22,1,.36,1)}
+.film-play:active{transform:scale(.92)}
+.film-play svg{width:20px;height:20px}
+.film-play .i-play,.film.paused .film-play .i-pause{display:none}
+.film.paused .film-play .i-play{display:block}
+.film-list{display:none;list-style:none}
+.film-list button{all:unset;box-sizing:border-box;display:flex;gap:14px;align-items:baseline;width:100%;padding:8px 0 8px 16px;border-left:2px solid rgba(255,255,255,.14);color:rgba(255,255,255,.55);cursor:pointer;font-size:1rem;transition:color .25s,border-color .25s}
+.film-list button b{font:600 .8rem/1 var(--sans);color:rgba(255,255,255,.4);font-variant-numeric:tabular-nums}
+.film-list li.done button{border-left-color:rgba(70,182,195,.45);color:rgba(255,255,255,.75)}
+.film-list li.on button{color:#fff;border-left-color:var(--aqua);font-weight:600}
+.film-list li.on button b{color:var(--aqua)}
+.film-list button:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
+@media(hover:hover){.film-list button:hover{color:#fff}}
+.film-bar{position:relative;height:32px;margin-top:6px}
+.film-bar::before{content:"";position:absolute;left:0;right:0;top:14px;height:4px;background:rgba(255,255,255,.16)}
+.film-fill{position:absolute;left:0;top:14px;height:4px;background:var(--aqua);width:0;transition:width .5s cubic-bezier(.22,1,.36,1)}
+.film-fill::after{content:"";position:absolute;right:-8px;top:-6px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.film-bar input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+.film-bar:focus-within::before{outline:2px solid var(--aqua);outline-offset:6px}
+@media(min-width:900px){.film{grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:64px;align-items:center}.film-list{display:block}.film-stage{max-height:none}}
+@media(prefers-reduced-motion:reduce){.film-stage>img{transition:opacity .2s;transform:none}}
 
 /* galería */
 .gal{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
@@ -233,11 +254,12 @@ footer b{color:#fff;font-family:var(--serif)}
 </header>
 
 <section class="hero" aria-labelledby="t">
+ <div class="hero-bg"><img src="img/trabajos/01.webp" alt="Chaise longue de terciopelo rojo recién tapizada en el taller" fetchpriority="high"></div>
  <div class="wrap hero-grid">
   <div>
-  <p class="eyebrow">Taller propio en Bellvitge · desde 1991</p>
-  <h1 id="t">Tu tapicero artesano en <em>Bellvitge</em></h1>
-  <p>Desde 1991 tapizamos, restauramos y fabricamos sofás, sillas, sillones y cabeceros en <strong>nuestro propio taller</strong> de L'Hospitalet.</p>
+  <p class="eyebrow">Taller propio en L'Hospitalet · desde 1991</p>
+  <h1 id="t">Tu tapicero artesano en <em>L'Hospitalet</em></h1>
+  <p>Desde 1991 tapizamos, restauramos y fabricamos sofás, sillas, sillones y cabeceros en <strong>nuestro propio taller</strong>, con recogida en cualquier zona.</p>
   <div class="cta">
    <a class="btn btn-aqua" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
    <a class="btn btn-line" href="#taller">Ver nuestros trabajos</a>
@@ -248,25 +270,13 @@ footer b{color:#fff;font-family:var(--serif)}
    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Presupuesto por WhatsApp</span>
   </div>
   </div>
-  <div class="hero-photo">
-  <img src="img/trabajos/07.webp" alt="Butaca giratoria tapizada en gris, recién terminada en el taller" fetchpriority="high">
-  <div class="steps3">
-   <p>Tu presupuesto en tres pasos</p>
-   <ol>
-    <li><span><b>Haz una foto</b> a tu sofá, silla o butaca.</span></li>
-    <li><span><b>Mándanosla por WhatsApp</b> con unas medidas aproximadas.</span></li>
-    <li><span><b>Te damos precio cerrado</b> y el tejido que mejor le va.</span></li>
-   </ol>
-   <a class="btn" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7S22.1 26.4 16 26.4z"/></svg>697 526 500</a>
-  </div>
-  </div>
  </div>
 </section>
 
 <div class="trust">
  <div class="wrap">
   <div><b>+30 años</b><span>de oficio en L'Hospitalet</span></div>
-  <div><b>Taller propio</b><span>todo se hace en Bellvitge</span></div>
+  <div><b>Taller propio</b><span>todo se hace en L'Hospitalet</span></div>
   <div><b>A medida</b><span>fabricación desde cero</span></div>
   <div><b>Recogida</b><span>en cualquier zona</span></div>
  </div>
@@ -288,18 +298,8 @@ footer b{color:#fff;font-family:var(--serif)}
 
 <section class="ba-sec" id="antes">
  <div class="wrap">
-  <div class="head center" data-r><h2>De la espuma al <em>acabado</em></h2><p>Arrastra la línea para ver el mismo mueble en el taller, antes de tapizar, y ya terminado.</p></div>
-  <div class="ba-grid">
-   <figure data-r>
-    <div class="ba">
-     <img src="img/trabajos/28.webp" loading="lazy" alt="Estructura de madera de un sofá con las cinchas puestas, antes de tapizar">
-     <img class="after" src="img/trabajos/40.webp" loading="lazy" alt="El mismo sofá de dos plazas tapizado en tela blanca, terminado">
-     <span class="tag l">En el taller</span><span class="tag r">Terminado</span>
-     <span class="handle" aria-hidden="true"></span>
-     <input type="range" min="0" max="100" value="50" aria-label="Comparar el sofá antes y después">
-    </div>
-    <figcaption>Sofá de dos plazas</figcaption>
-   </figure>
+  <div class="head center" data-r><h2>De la espuma al <em>acabado</em></h2><p>Arrastra la línea para ver la misma butaca en el taller, antes de tapizar, y ya terminada.</p></div>
+  <div class="ba-grid one">
    <figure data-r style="--i:1">
     <div class="ba">
      <img src="img/trabajos/19.webp" loading="lazy" alt="Butaca en fase de espumas, antes de tapizar">
@@ -314,35 +314,58 @@ footer b{color:#fff;font-family:var(--serif)}
  </div>
 </section>
 
-<section id="paso-a-paso">
+<section id="paso-a-paso" class="film-sec">
  <div class="wrap">
-  <div class="head" data-r><h2>Un sofá, de la madera <em>al salón</em></h2><p>Así hacemos un sofá en nuestro taller, paso a paso. Fotos de un trabajo real.</p></div>
-  <div class="pasos">
-   <figure data-r style="--i:0"><img src="img/trabajos/27.webp" loading="lazy" alt="Estructura de madera: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>1</b> Estructura de madera</figcaption></figure>
-   <figure data-r style="--i:1"><img src="img/trabajos/28.webp" loading="lazy" alt="Cinchas: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>2</b> Cinchas</figcaption></figure>
-   <figure data-r style="--i:2"><img src="img/trabajos/29.webp" loading="lazy" alt="Grapado de las cinchas: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>3</b> Grapado de las cinchas</figcaption></figure>
-   <figure data-r style="--i:3"><img src="img/trabajos/30.webp" loading="lazy" alt="Primera capa: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>4</b> Primera capa</figcaption></figure>
-   <figure data-r style="--i:0"><img src="img/trabajos/31.webp" loading="lazy" alt="Espumas: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>5</b> Espumas</figcaption></figure>
-   <figure data-r style="--i:1"><img src="img/trabajos/32.webp" loading="lazy" alt="Guata: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>6</b> Guata</figcaption></figure>
-   <figure data-r style="--i:2"><img src="img/trabajos/33.webp" loading="lazy" alt="Respaldo: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>7</b> Respaldo</figcaption></figure>
-   <figure data-r style="--i:3"><img src="img/trabajos/34.webp" loading="lazy" alt="Ajuste de espumas: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>8</b> Ajuste de espumas</figcaption></figure>
-   <figure data-r style="--i:0"><img src="img/trabajos/35.webp" loading="lazy" alt="Forrado: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>9</b> Forrado</figcaption></figure>
-   <figure data-r style="--i:1"><img src="img/trabajos/36.webp" loading="lazy" alt="Tapizado del brazo: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>10</b> Tapizado del brazo</figcaption></figure>
-   <figure data-r style="--i:2"><img src="img/trabajos/37.webp" loading="lazy" alt="Cojín de asiento: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>11</b> Cojín de asiento</figcaption></figure>
-   <figure data-r style="--i:3"><img src="img/trabajos/38.webp" loading="lazy" alt="Montaje: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>12</b> Montaje</figcaption></figure>
-   <figure data-r style="--i:0"><img src="img/trabajos/39.webp" loading="lazy" alt="Repaso final: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>13</b> Repaso final</figcaption></figure>
-   <figure data-r style="--i:1"><img src="img/trabajos/40.webp" loading="lazy" alt="Terminado: sofá blanco en el taller de Tapisseria Gama"><figcaption><b>14</b> Terminado</figcaption></figure>
+  <div class="head" data-r><p class="eyebrow">Un trabajo real · 14 pasos</p><h2>Un sofá, de la madera <em>al salón</em></h2><p>Así nace un sofá en nuestro taller. Avanza solo; si quieres, arrastra la barra o toca un paso.</p></div>
+  <div class="film" data-r>
+   <div class="film-stage">
+    <img src="img/trabajos/27.webp" alt="Paso 1: estructura de madera del sofá en el taller" class="on">
+    <img src="img/trabajos/28.webp" alt="Paso 2: cinchas del sofá en el taller">
+    <img src="img/trabajos/29.webp" alt="Paso 3: grapado de las cinchas del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/30.webp" alt="Paso 4: primera capa del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/31.webp" alt="Paso 5: espumas del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/32.webp" alt="Paso 6: guata del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/33.webp" alt="Paso 7: respaldo del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/34.webp" alt="Paso 8: ajuste de espumas del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/35.webp" alt="Paso 9: forrado del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/36.webp" alt="Paso 10: tapizado del brazo del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/37.webp" alt="Paso 11: cojín de asiento del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/38.webp" alt="Paso 12: montaje del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/39.webp" alt="Paso 13: repaso final del sofá en el taller" loading="lazy">
+    <img src="img/trabajos/40.webp" alt="Paso 14: terminado del sofá en el taller" loading="lazy">
+    <div class="film-cap" aria-live="polite"><span class="film-n">01<small>/14</small></span><span><b class="film-t">Estructura de madera</b><span class="film-d">Montamos el armazón del sofá en madera.</span></span></div>
+    <button type="button" class="film-play" aria-label="Pausar"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></button>
+   </div>
+   <div class="film-side">
+    <ol class="film-list">
+     <li class="on"><button type="button"><b>01</b>Estructura de madera</button></li>
+     <li><button type="button"><b>02</b>Cinchas</button></li>
+     <li><button type="button"><b>03</b>Grapado de las cinchas</button></li>
+     <li><button type="button"><b>04</b>Primera capa</button></li>
+     <li><button type="button"><b>05</b>Espumas</button></li>
+     <li><button type="button"><b>06</b>Guata</button></li>
+     <li><button type="button"><b>07</b>Respaldo</button></li>
+     <li><button type="button"><b>08</b>Ajuste de espumas</button></li>
+     <li><button type="button"><b>09</b>Forrado</button></li>
+     <li><button type="button"><b>10</b>Tapizado del brazo</button></li>
+     <li><button type="button"><b>11</b>Cojín de asiento</button></li>
+     <li><button type="button"><b>12</b>Montaje</button></li>
+     <li><button type="button"><b>13</b>Repaso final</button></li>
+     <li><button type="button"><b>14</b>Terminado</button></li>
+    </ol>
+    <div class="film-bar"><span class="film-fill"></span><input type="range" min="0" max="13" value="0" step="1" aria-label="Paso del proceso"></div>
+   </div>
   </div>
  </div>
 </section>
 
 <section id="historia">
  <div class="wrap story">
-  <img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo terminado en el taller de Bellvitge" data-r>
+  <img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo terminado en el taller de L'Hospitalet" data-r>
   <div data-r style="--i:1">
    <p class="eyebrow" style="color:var(--teal);margin:0">Desde 1991</p>
    <h2 style="font-size:clamp(2rem,4.6vw,3rem);color:var(--deep);margin-top:12px">Un taller de <em style="color:var(--teal)">barrio</em>, con oficio de verdad</h2>
-   <p>Cada pieza se trabaja a mano en nuestro taller de la Av. Mare de Déu de Bellvitge: desmontamos, revisamos muelles, cinchas y espumas, y tapizamos con el tejido que elijas.</p>
+   <p>Cada pieza se trabaja a mano en nuestro taller de L'Hospitalet: desmontamos, revisamos muelles, cinchas y espumas, y tapizamos con el tejido que elijas.</p>
    <p>Más de treinta años arreglando los sofás y las sillas del barrio, de casas y de negocios.</p>
    <a class="btn btn-deep" style="margin-top:26px" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Cuéntanos qué mueble tienes</a>
   </div>
@@ -373,7 +396,7 @@ footer b{color:#fff;font-family:var(--serif)}
   <ol class="steps">
    <li data-r><h3>Nos escribes</h3><p>Mándanos por WhatsApp una foto del mueble y unas medidas aproximadas.</p></li>
    <li data-r style="--i:1"><h3>Presupuesto</h3><p>Te proponemos tejido y acabado, y te damos el precio cerrado.</p></li>
-   <li data-r style="--i:2"><h3>Al taller</h3><p>Pasamos a recogerlo en cualquier zona, o lo traes tú a Bellvitge.</p></li>
+   <li data-r style="--i:2"><h3>Al taller</h3><p>Pasamos a recogerlo en cualquier zona, o lo traes tú al taller.</p></li>
    <li data-r style="--i:3"><h3>Listo</h3><p>Te avisamos cuando está terminado y quedamos para la entrega.</p></li>
   </ol>
  </div>
@@ -460,6 +483,36 @@ footer b{color:#fff;font-family:var(--serif)}
     function set(){ba.style.setProperty('--pos',r.value+'%')}
     r.addEventListener('input',set);set();
   });
+  // el sofá paso a paso: avanza solo y se puede arrastrar
+  var film=document.querySelector('.film');
+  if(film){
+    var ims=film.querySelectorAll('.film-stage>img'),lis=film.querySelectorAll('.film-list li'),rg=film.querySelector('.film-bar input'),fill=film.querySelector('.film-fill'),
+        nEl=film.querySelector('.film-n'),tEl=film.querySelector('.film-t'),dEl=film.querySelector('.film-d'),pb=film.querySelector('.film-play'),
+        D=[["Estructura de madera","Montamos el armazón del sofá en madera."],["Cinchas","Tensamos las cinchas que sujetan el asiento."],["Grapado de las cinchas","Cada cincha se grapa bien tirante al armazón."],["Primera capa","Cubrimos la estructura con la primera capa."],["Espumas","Cortamos y pegamos las espumas a medida."],["Guata","La guata suaviza las formas y redondea los cantos."],["Respaldo","Damos forma y relleno al respaldo."],["Ajuste de espumas","Repasamos cada espuma para que asiente igual."],["Forrado","Empezamos a vestir el sofá con la tela."],["Tapizado del brazo","Los brazos se tapizan a mano, costura a costura."],["Cojín de asiento","Confeccionamos los cojines a medida."],["Montaje","Juntamos asiento, respaldo y cojines."],["Repaso final","Revisamos costuras, tensión y acabados."],["Terminado","Listo para volver a casa."]],cur=0,timer=null,seen=false,
+        still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(i){
+      cur=(i+D.length)%D.length;
+      ims.forEach(function(m,k){m.classList.toggle('on',k===cur)});
+      lis.forEach(function(l,k){l.classList.toggle('on',k===cur);l.classList.toggle('done',k<cur)});
+      rg.value=cur;fill.style.width=(cur/(D.length-1)*100)+'%';
+      nEl.firstChild.nodeValue=(cur<9?'0':'')+(cur+1);tEl.textContent=D[cur][0];dEl.textContent=D[cur][1];
+    }
+    function tick(){show(cur+1);timer=setTimeout(tick,cur===D.length-1?3200:1800)}
+    function play(){stop();film.classList.remove('paused');pb.setAttribute('aria-label','Pausar');timer=setTimeout(tick,cur===D.length-1?3200:1800)}
+    function stop(){clearTimeout(timer);timer=null}
+    function pause(){stop();film.classList.add('paused');pb.setAttribute('aria-label','Reproducir')}
+    pb.addEventListener('click',function(){film.classList.contains('paused')?play():pause()});
+    rg.addEventListener('input',function(){pause();show(+rg.value)});
+    lis.forEach(function(l,k){l.querySelector('button').addEventListener('click',function(){pause();show(k)})});
+    if(still)pause();
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es.forEach(function(e){
+        if(e.isIntersecting){if(!seen){seen=true;ims.forEach(function(m){m.loading='eager'})}if(!film.classList.contains('paused'))play()}
+        else stop();
+      })},{threshold:.35}).observe(film);
+    }else if(!still)play();
+    show(0);
+  }
 })();
 </script>
 </body>
