@@ -81,6 +81,10 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .hero-grid>*{min-width:0}
 @media(min-width:1000px){.hero-grid{grid-template-columns:1.35fr 1fr;gap:56px}}
 .eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua);font-weight:600;margin-bottom:18px}
+.hero-photo{position:relative}
+.hero-photo>img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.hero-photo .steps3{position:relative;margin:-60px 16px 0}
+@media(min-width:1000px){.hero-photo{margin:0 0 150px 60px}.hero-photo>img{max-height:600px}.hero-photo .steps3{position:absolute;left:-120px;bottom:-190px;margin:0;width:min(370px,92%);padding:24px}.hero-photo .steps3 ol{gap:10px;margin-top:14px}.hero-photo .steps3 .btn{margin-top:16px}}
 .steps3{background:#fff;color:var(--ink);padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .steps3>p{font:700 1.35rem/1.2 var(--serif);color:var(--deep)}
 .steps3 ol{list-style:none;display:grid;gap:16px;margin-top:20px;counter-reset:p}
@@ -244,6 +248,8 @@ footer b{color:#fff;font-family:var(--serif)}
    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Presupuesto por WhatsApp</span>
   </div>
   </div>
+  <div class="hero-photo">
+  <img src="img/trabajos/07.webp" alt="Butaca giratoria tapizada en gris, recién terminada en el taller" fetchpriority="high">
   <div class="steps3">
    <p>Tu presupuesto en tres pasos</p>
    <ol>
@@ -252,6 +258,7 @@ footer b{color:#fff;font-family:var(--serif)}
     <li><span><b>Te damos precio cerrado</b> y el tejido que mejor le va.</span></li>
    </ol>
    <a class="btn" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7S22.1 26.4 16 26.4z"/></svg>697 526 500</a>
+  </div>
   </div>
  </div>
 </section>
