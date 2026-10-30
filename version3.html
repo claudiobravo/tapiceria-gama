@@ -135,40 +135,55 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 @media(min-width:900px){.ba-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .ba-note{text-align:center;color:rgba(255,255,255,.7);font-size:.95rem;margin-top:16px}
 
-/* el sofá paso a paso */
+/* el sofá paso a paso (diseño hecho en Design) */
 .film-sec{background:var(--deep);color:#fff;padding-top:0}
-.film-sec .head p{color:rgba(255,255,255,.75)}
-.film-sec .head p.eyebrow{color:var(--aqua);margin-top:0;padding-top:8px}
-.film{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
-.film-stage{position:relative;aspect-ratio:3/4;max-height:80svh;overflow:hidden;background:#06201f;margin-inline:auto;width:100%}
-.film-stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform 3.2s cubic-bezier(.16,1,.3,1)}
+.film-sec .head{margin-bottom:0}
+.film-sec .head h2{color:#fff}
+.film-sec .head p{color:rgba(255,255,255,.78)}
+.film-sec .head p.eyebrow{color:var(--aqua);margin:0 0 14px}
+.film{display:flex;flex-direction:column;gap:22px}
+.film-side{display:contents}
+.film-side .head{order:1}.film-stage{order:2}.film-ctrl{order:3}
+.film-stage{position:relative;aspect-ratio:3/4;max-height:82svh;width:100%;margin-inline:auto;overflow:hidden;background:#06201f;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.film-stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.07);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform 3.4s cubic-bezier(.16,1,.3,1)}
 .film-stage>img.on{opacity:1;transform:scale(1)}
-.film-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,30,33,.92) 0%,rgba(6,30,33,0) 42%);pointer-events:none}
-.film-cap{position:absolute;left:20px;right:78px;bottom:20px;z-index:1;display:flex;gap:16px;align-items:flex-end}
-.film-n{font:800 3.2rem/.85 var(--serif);color:var(--aqua);font-variant-numeric:tabular-nums;flex:none}
-.film-n small{font:600 .85rem/1 var(--sans);color:rgba(255,255,255,.6);margin-left:4px}
-.film-t{display:block;font:700 1.3rem/1.15 var(--serif)}
-.film-d{display:block;font-size:.92rem;color:rgba(255,255,255,.82);margin-top:4px}
-.film-play{position:absolute;right:18px;bottom:22px;z-index:2;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--deep);display:grid;place-items:center;cursor:pointer;transition:transform .14s cubic-bezier(.22,1,.36,1)}
-.film-play:active{transform:scale(.92)}
-.film-play svg{width:20px;height:20px}
+.film-stage::before,.film-stage::after{content:"";position:absolute;left:0;right:0;z-index:1;pointer-events:none}
+.film-stage::before{top:0;height:90px;background:linear-gradient(180deg,rgba(6,30,33,.7),rgba(6,30,33,0))}
+.film-stage::after{bottom:0;height:200px;background:linear-gradient(0deg,rgba(6,30,33,.95),rgba(6,30,33,0))}
+.film-segs{position:absolute;left:12px;right:12px;top:12px;z-index:2;display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:3px}
+.film-segs i{height:3px;background:rgba(255,255,255,.28);overflow:hidden}
+.film-segs b{display:block;height:100%;width:0;background:var(--aqua);transition:width .45s cubic-bezier(.22,1,.36,1)}
+.film-segs i.done b{width:100%}
+.film-tap{position:absolute;top:0;bottom:0;z-index:2;width:38%;border:0;background:transparent;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent}
+.film-tap.l{left:0}.film-tap.r{right:0}
+.film-tap:focus-visible{outline:2px solid var(--aqua);outline-offset:-4px}
+.film-cap{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;display:flex;gap:14px;align-items:flex-end;pointer-events:none}
+.film-n{font:800 3.5rem/.8 var(--serif);color:var(--aqua);font-variant-numeric:tabular-nums;flex:none}
+.film-t{display:block;font:700 1.25rem/1.15 var(--serif)}
+.film-d{display:block;font-size:.9rem;color:rgba(255,255,255,.82);margin-top:3px}
+.film-thumbs{display:none;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.film-thumbs button{padding:0;border:0;cursor:pointer;aspect-ratio:3/4;overflow:hidden;background:#06201f;outline:2px solid transparent;outline-offset:3px;opacity:.45;transition:opacity .25s,outline-color .25s}
+.film-thumbs button.done{opacity:.75}
+.film-thumbs button.on{opacity:1;outline-color:var(--aqua)}
+.film-thumbs img{width:100%;height:100%;object-fit:cover}
+@media(hover:hover){.film-thumbs button:hover{opacity:1}}
+.film-ctrl{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.film-arr{display:none;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;place-items:center;cursor:pointer;transition:border-color .18s,transform .14s cubic-bezier(.22,1,.36,1)}
+.film-arr svg{width:20px;height:20px}
+.film-play{height:48px;padding:0 20px;border-radius:999px;border:0;background:var(--aqua);color:var(--aqua-ink);font:600 .95rem/1 var(--sans);display:inline-flex;align-items:center;gap:10px;cursor:pointer;transition:background-color .18s,transform .14s cubic-bezier(.22,1,.36,1)}
+.film-play svg{width:18px;height:18px}
 .film-play .i-play,.film.paused .film-play .i-pause{display:none}
 .film.paused .film-play .i-play{display:block}
-.film-list{display:none;list-style:none}
-.film-list button{all:unset;box-sizing:border-box;display:flex;gap:14px;align-items:baseline;width:100%;padding:8px 0 8px 16px;border-left:2px solid rgba(255,255,255,.14);color:rgba(255,255,255,.55);cursor:pointer;font-size:1rem;transition:color .25s,border-color .25s}
-.film-list button b{font:600 .8rem/1 var(--sans);color:rgba(255,255,255,.4);font-variant-numeric:tabular-nums}
-.film-list li.done button{border-left-color:rgba(70,182,195,.45);color:rgba(255,255,255,.75)}
-.film-list li.on button{color:#fff;border-left-color:var(--aqua);font-weight:600}
-.film-list li.on button b{color:var(--aqua)}
-.film-list button:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
-@media(hover:hover){.film-list button:hover{color:#fff}}
-.film-bar{position:relative;height:32px;margin-top:6px}
-.film-bar::before{content:"";position:absolute;left:0;right:0;top:14px;height:4px;background:rgba(255,255,255,.16)}
-.film-fill{position:absolute;left:0;top:14px;height:4px;background:var(--aqua);width:0;transition:width .5s cubic-bezier(.22,1,.36,1)}
-.film-fill::after{content:"";position:absolute;right:-8px;top:-6px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.4)}
-.film-bar input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
-.film-bar:focus-within::before{outline:2px solid var(--aqua);outline-offset:6px}
-@media(min-width:900px){.film{grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:64px;align-items:center}.film-list{display:block}.film-stage{max-height:none}}
+.film-arr:active,.film-play:active{transform:scale(.95)}
+@media(hover:hover){.film-arr:hover{border-color:#fff}.film-play:hover{background:#62c6d2}}
+.film-count{font-size:.9rem;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums}
+@media(min-width:900px){
+ .film{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:72px;align-items:center}
+ .film-side{display:flex;flex-direction:column;gap:28px;min-width:0}.film-side .head,.film-stage,.film-ctrl{order:0}
+ .film-thumbs{display:grid}.film-arr{display:grid}
+ .film-tap{display:none}
+ .film-stage{max-height:none}
+}
 @media(prefers-reduced-motion:reduce){.film-stage>img{transition:opacity .2s;transform:none}}
 
 /* galería */
@@ -315,10 +330,8 @@ footer b{color:#fff;font-family:var(--serif)}
 </section>
 
 <section id="paso-a-paso" class="film-sec">
- <div class="wrap">
-  <div class="head" data-r><p class="eyebrow">Un trabajo real · 14 pasos</p><h2>Un sofá, de la madera <em>al salón</em></h2><p>Así nace un sofá en nuestro taller. Avanza solo; si quieres, arrastra la barra o toca un paso.</p></div>
-  <div class="film" data-r>
-   <div class="film-stage">
+ <div class="wrap film">
+  <div class="film-stage">
     <img src="img/trabajos/27.webp" alt="Paso 1: estructura de madera del sofá en el taller" class="on">
     <img src="img/trabajos/28.webp" alt="Paso 2: cinchas del sofá en el taller">
     <img src="img/trabajos/29.webp" alt="Paso 3: grapado de las cinchas del sofá en el taller" loading="lazy">
@@ -333,27 +346,34 @@ footer b{color:#fff;font-family:var(--serif)}
     <img src="img/trabajos/38.webp" alt="Paso 12: montaje del sofá en el taller" loading="lazy">
     <img src="img/trabajos/39.webp" alt="Paso 13: repaso final del sofá en el taller" loading="lazy">
     <img src="img/trabajos/40.webp" alt="Paso 14: terminado del sofá en el taller" loading="lazy">
-    <div class="film-cap" aria-live="polite"><span class="film-n">01<small>/14</small></span><span><b class="film-t">Estructura de madera</b><span class="film-d">Montamos el armazón del sofá en madera.</span></span></div>
-    <button type="button" class="film-play" aria-label="Pausar"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></button>
+   <div class="film-segs" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+   <button type="button" class="film-tap l" aria-label="Paso anterior"></button>
+   <button type="button" class="film-tap r" aria-label="Paso siguiente"></button>
+   <div class="film-cap" aria-live="polite"><span class="film-n">01</span><span><b class="film-t">Estructura de madera</b><span class="film-d">Montamos el armazón del sofá en madera.</span></span></div>
+  </div>
+  <div class="film-side">
+   <div class="head" data-r><p class="eyebrow">Un trabajo real · 14 pasos</p><h2>Un sofá, de la madera <em>al salón</em></h2><p class="film-intro">Así nace un sofá en nuestro taller. Avanza solo; toca para ir paso a paso.</p></div>
+   <div class="film-thumbs">
+     <button type="button" aria-label="Ir al paso 1: Estructura de madera"><img src="img/trabajos/27.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 2: Cinchas"><img src="img/trabajos/28.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 3: Grapado de las cinchas"><img src="img/trabajos/29.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 4: Primera capa"><img src="img/trabajos/30.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 5: Espumas"><img src="img/trabajos/31.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 6: Guata"><img src="img/trabajos/32.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 7: Respaldo"><img src="img/trabajos/33.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 8: Ajuste de espumas"><img src="img/trabajos/34.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 9: Forrado"><img src="img/trabajos/35.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 10: Tapizado del brazo"><img src="img/trabajos/36.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 11: Cojín de asiento"><img src="img/trabajos/37.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 12: Montaje"><img src="img/trabajos/38.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 13: Repaso final"><img src="img/trabajos/39.webp" alt="" loading="lazy"></button>
+     <button type="button" aria-label="Ir al paso 14: Terminado"><img src="img/trabajos/40.webp" alt="" loading="lazy"></button>
    </div>
-   <div class="film-side">
-    <ol class="film-list">
-     <li class="on"><button type="button"><b>01</b>Estructura de madera</button></li>
-     <li><button type="button"><b>02</b>Cinchas</button></li>
-     <li><button type="button"><b>03</b>Grapado de las cinchas</button></li>
-     <li><button type="button"><b>04</b>Primera capa</button></li>
-     <li><button type="button"><b>05</b>Espumas</button></li>
-     <li><button type="button"><b>06</b>Guata</button></li>
-     <li><button type="button"><b>07</b>Respaldo</button></li>
-     <li><button type="button"><b>08</b>Ajuste de espumas</button></li>
-     <li><button type="button"><b>09</b>Forrado</button></li>
-     <li><button type="button"><b>10</b>Tapizado del brazo</button></li>
-     <li><button type="button"><b>11</b>Cojín de asiento</button></li>
-     <li><button type="button"><b>12</b>Montaje</button></li>
-     <li><button type="button"><b>13</b>Repaso final</button></li>
-     <li><button type="button"><b>14</b>Terminado</button></li>
-    </ol>
-    <div class="film-bar"><span class="film-fill"></span><input type="range" min="0" max="13" value="0" step="1" aria-label="Paso del proceso"></div>
+   <div class="film-ctrl">
+    <button type="button" class="film-arr prev" aria-label="Paso anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button type="button" class="film-play" aria-label="Pausar"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg><span>Pausar</span></button>
+    <button type="button" class="film-arr next" aria-label="Paso siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    <span class="film-count">Paso <span class="film-k">01</span> de 14</span>
    </div>
   </div>
  </div>
@@ -483,27 +503,31 @@ footer b{color:#fff;font-family:var(--serif)}
     function set(){ba.style.setProperty('--pos',r.value+'%')}
     r.addEventListener('input',set);set();
   });
-  // el sofá paso a paso: avanza solo y se puede arrastrar
+  // el sofá paso a paso: avanza solo, se puede tocar o pausar
   var film=document.querySelector('.film');
   if(film){
-    var ims=film.querySelectorAll('.film-stage>img'),lis=film.querySelectorAll('.film-list li'),rg=film.querySelector('.film-bar input'),fill=film.querySelector('.film-fill'),
-        nEl=film.querySelector('.film-n'),tEl=film.querySelector('.film-t'),dEl=film.querySelector('.film-d'),pb=film.querySelector('.film-play'),
+    var ims=film.querySelectorAll('.film-stage>img'),segs=film.querySelectorAll('.film-segs i'),ths=film.querySelectorAll('.film-thumbs button'),
+        nEl=film.querySelector('.film-n'),kEl=film.querySelector('.film-k'),tEl=film.querySelector('.film-t'),dEl=film.querySelector('.film-d'),
+        pb=film.querySelector('.film-play'),pl=pb.querySelector('span'),
         D=[["Estructura de madera","Montamos el armazón del sofá en madera."],["Cinchas","Tensamos las cinchas que sujetan el asiento."],["Grapado de las cinchas","Cada cincha se grapa bien tirante al armazón."],["Primera capa","Cubrimos la estructura con la primera capa."],["Espumas","Cortamos y pegamos las espumas a medida."],["Guata","La guata suaviza las formas y redondea los cantos."],["Respaldo","Damos forma y relleno al respaldo."],["Ajuste de espumas","Repasamos cada espuma para que asiente igual."],["Forrado","Empezamos a vestir el sofá con la tela."],["Tapizado del brazo","Los brazos se tapizan a mano, costura a costura."],["Cojín de asiento","Confeccionamos los cojines a medida."],["Montaje","Juntamos asiento, respaldo y cojines."],["Repaso final","Revisamos costuras, tensión y acabados."],["Terminado","Listo para volver a casa."]],cur=0,timer=null,seen=false,
         still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function show(i){
       cur=(i+D.length)%D.length;
       ims.forEach(function(m,k){m.classList.toggle('on',k===cur)});
-      lis.forEach(function(l,k){l.classList.toggle('on',k===cur);l.classList.toggle('done',k<cur)});
-      rg.value=cur;fill.style.width=(cur/(D.length-1)*100)+'%';
-      nEl.firstChild.nodeValue=(cur<9?'0':'')+(cur+1);tEl.textContent=D[cur][0];dEl.textContent=D[cur][1];
+      segs.forEach(function(s,k){s.classList.toggle('done',k<=cur)});
+      ths.forEach(function(b,k){b.classList.toggle('on',k===cur);b.classList.toggle('done',k<cur)});
+      var n=(cur<9?'0':'')+(cur+1);nEl.textContent=n;kEl.textContent=n;tEl.textContent=D[cur][0];dEl.textContent=D[cur][1];
     }
-    function tick(){show(cur+1);timer=setTimeout(tick,cur===D.length-1?3200:1800)}
-    function play(){stop();film.classList.remove('paused');pb.setAttribute('aria-label','Pausar');timer=setTimeout(tick,cur===D.length-1?3200:1800)}
+    function wait(){return cur===D.length-1?3200:1800}
+    function tick(){show(cur+1);timer=setTimeout(tick,wait())}
     function stop(){clearTimeout(timer);timer=null}
-    function pause(){stop();film.classList.add('paused');pb.setAttribute('aria-label','Reproducir')}
+    function play(){stop();film.classList.remove('paused');pb.setAttribute('aria-label','Pausar');pl.textContent='Pausar';timer=setTimeout(tick,wait())}
+    function pause(){stop();film.classList.add('paused');pb.setAttribute('aria-label','Reproducir');pl.textContent='Reproducir'}
+    function go(i){pause();show(i)}
     pb.addEventListener('click',function(){film.classList.contains('paused')?play():pause()});
-    rg.addEventListener('input',function(){pause();show(+rg.value)});
-    lis.forEach(function(l,k){l.querySelector('button').addEventListener('click',function(){pause();show(k)})});
+    film.querySelectorAll('.prev,.film-tap.l').forEach(function(b){b.addEventListener('click',function(){go(cur-1)})});
+    film.querySelectorAll('.next,.film-tap.r').forEach(function(b){b.addEventListener('click',function(){go(cur+1)})});
+    ths.forEach(function(b,k){b.addEventListener('click',function(){go(k)})});
     if(still)pause();
     if('IntersectionObserver' in window){
       new IntersectionObserver(function(es){es.forEach(function(e){
