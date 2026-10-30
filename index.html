@@ -63,7 +63,9 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .nav .tel{display:none;align-items:center;gap:8px;font-size:.95rem;color:var(--teal);text-decoration:none;font-weight:500}
 .nav .tel svg{width:18px;height:18px}
 .nav .btn{min-height:44px;padding:0 18px;font-size:.92rem;background:var(--teal);color:#fff}
-@media(max-width:560px){.nav .btn{display:none}}
+.nav .call{display:none;width:44px;height:44px;place-items:center;background:var(--teal);color:#fff}
+.nav .call svg{width:20px;height:20px}
+@media(max-width:560px){.nav .btn{display:none}.nav .call{display:grid}}
 @media(min-width:1000px){.nav ul{display:flex}.nav .tel{display:flex}}
 
 /* portada */
@@ -76,23 +78,27 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .hero p{font-size:clamp(1.05rem,1.4vw,1.2rem);max-width:44ch;margin-top:22px;color:rgba(255,255,255,.86)}
 .hero p strong{color:#fff;font-weight:600}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;font-size:.95rem;color:rgba(255,255,255,.8)}
-.facts span{display:inline-flex;align-items:center;gap:8px}
-.facts svg{width:18px;height:18px;color:var(--aqua)}
-@media(min-width:1000px){.hero{min-height:calc(100svh - 72px);display:flex;align-items:center}.hero-bg{position:absolute;top:0;right:0;bottom:0;width:60%;max-height:none;aspect-ratio:auto}.hero-bg img{object-position:52% 70%}.hero-bg::after{background:linear-gradient(90deg,var(--deep) 0%,rgba(11,42,46,.35) 6%,rgba(11,42,46,0) 15%),linear-gradient(0deg,rgba(11,42,46,.45),rgba(11,42,46,0) 25%)}.hero .wrap{padding:72px 0}.hero h1{font-size:clamp(3rem,4.6vw,4.2rem);max-width:none}.hero p{margin-top:18px}.hero .cta{margin-top:26px}.facts{margin-top:26px}}
+.hero-tels{font-size:.92rem!important;color:rgba(255,255,255,.7)!important;margin-top:18px!important}
+@media(max-width:560px){.hero .cta{display:grid;grid-template-columns:1fr 1fr}.hero .cta .btn{padding:0 12px}.hero .lg{display:none}.hero-tels{text-align:center}}
+@media(min-width:1000px){.hero{min-height:calc(100svh - 72px);display:flex;align-items:center}.hero-bg{position:absolute;top:0;right:0;bottom:0;width:60%;max-height:none;aspect-ratio:auto}.hero-bg img{object-position:52% 70%}.hero-bg::after{background:linear-gradient(90deg,var(--deep) 0%,rgba(11,42,46,.35) 6%,rgba(11,42,46,0) 15%),linear-gradient(0deg,rgba(11,42,46,.45),rgba(11,42,46,0) 25%)}.hero .wrap{padding:72px 0}.hero h1{font-size:clamp(3rem,4.6vw,4.2rem);max-width:none}.hero p{margin-top:18px}.hero .cta{margin-top:26px}.hero-tels{margin-top:22px}}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:end}
 .hero-grid>*{min-width:0}
 @media(min-width:1000px){.hero-grid>div:first-child{max-width:450px}}
 .eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua);font-weight:600;margin-bottom:18px}
-.trust{background:var(--deep2);color:#fff}
-.trust .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:26px 0}
-.trust b{display:block;font:700 clamp(1.3rem,2.4vw,1.9rem)/1 var(--serif);color:var(--aqua)}
-.trust span{display:block;font-size:.88rem;margin-top:6px;color:rgba(255,255,255,.8)}
-@media(min-width:900px){.trust .wrap{grid-template-columns:repeat(4,1fr)}}
-.story{display:grid;gap:40px;align-items:center}
-.story img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.story{display:grid;gap:28px;align-items:center}
+.story h2{font-size:clamp(2rem,4.6vw,3rem);color:var(--deep);margin-top:12px}
+.story h2 em{color:var(--teal)}
 .story p{color:var(--muted);font-size:1.05rem;line-height:1.7;margin-top:16px}
-@media(min-width:900px){.story{grid-template-columns:1fr 1fr;gap:56px}}
+.story .btn{margin-top:24px}
+.collage{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(150px,26vw));gap:8px}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage img:first-child{grid-row:span 2;object-position:50% 78%}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:22px}
+.stats div{padding:14px 12px;background:var(--white);border:1px solid var(--line)}
+.stats b{display:block;font:700 clamp(1.15rem,2.2vw,1.6rem)/1 var(--serif);color:var(--deep)}
+.stats span{display:block;font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.3}
+@media(max-width:719px){.story .btn{width:100%}}
+@media(min-width:900px){.story{grid-template-columns:1fr 1fr;gap:64px}.collage{grid-template-rows:repeat(2,minmax(0,260px));gap:12px}.stats{gap:12px}.stats div{padding:18px}}
 .revs{display:grid;gap:18px;grid-template-columns:1fr}
 .revs figure{margin:0;padding:28px;border:1.5px dashed #b9c4c2;background:var(--white);color:var(--muted)}
 .revs .st{color:#b07a12;letter-spacing:2px}
@@ -100,17 +106,20 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 @media(min-width:900px){.revs{grid-template-columns:repeat(3,1fr)}}
 
 /* servicios */
-.svc{display:grid;gap:22px;grid-template-columns:1fr}
+.svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 40px;margin-bottom:40px}
+.svc-head .head{margin-bottom:0}
+.svc-head .btn{flex:none}
+.svc{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .svc article{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s}
-.svc .ph{aspect-ratio:4/3;overflow:hidden}
+.svc .ph{aspect-ratio:1;overflow:hidden}
 .svc img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-.svc .body{padding:22px 22px 26px}
-.svc h3{font-size:1.35rem;color:var(--deep)}
-.svc p{color:var(--muted);font-size:.97rem;margin-top:8px}
-.svc .more{margin-top:14px;font-weight:600;color:var(--teal);text-decoration:none;font-size:.95rem}
+.svc .body{padding:12px 12px 14px}
+.svc h3{font-size:1.05rem;color:var(--deep)}
+.svc p{color:var(--muted);font-size:.84rem;line-height:1.45;margin-top:4px}
 @media(hover:hover){.svc article:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,42,46,.12)}.svc article:hover img{transform:scale(1.04)}}
-@media(min-width:720px){.svc{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.svc{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:719px){.svc-head .btn{order:2;width:100%}.svc-head{flex-direction:column;align-items:stretch}}
+@media(min-width:720px){.svc{gap:20px}.svc .ph{aspect-ratio:16/10}.svc .body{padding:18px 20px 22px}.svc h3{font-size:1.3rem}.svc p{font-size:.95rem;margin-top:6px}}
+@media(min-width:1000px){.svc{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 /* antes y después */
 .ba-sec{background:var(--deep);color:#fff}
@@ -196,14 +205,24 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .gal-more{text-align:center;margin-top:28px}
 
 /* proceso */
-.proc{background:var(--white)}
-.steps{display:grid;gap:18px;grid-template-columns:1fr;counter-reset:s;list-style:none}
-.steps li{padding:28px 24px;background:var(--paper);border:1px solid var(--line);position:relative}
-.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--deep);color:var(--aqua);font:700 1.2rem/1 var(--serif);margin-bottom:16px}
-.steps h3{font-size:1.25rem;color:var(--deep)}
-.steps p{color:var(--muted);font-size:.97rem;margin-top:6px}
-@media(min-width:720px){.steps{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.steps{grid-template-columns:repeat(4,1fr)}}
+.proc{background:var(--paper)}
+.steps{position:relative;display:grid;gap:26px;grid-template-columns:1fr;counter-reset:s;list-style:none;max-width:1000px;margin:0 auto}
+.steps::before{content:"";position:absolute;left:21px;top:22px;bottom:22px;width:2px;background:#c9d6d4}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--deep);color:var(--aqua);display:grid;place-items:center;font:700 1.15rem/1 var(--serif);box-shadow:0 0 0 6px var(--paper)}
+.steps h3{font-size:1.2rem;color:var(--deep);padding-top:2px}
+.steps p{color:var(--muted);font-size:.95rem;margin-top:4px}
+.steps-cta{text-align:center;margin-top:36px}
+.steps-cta .btn{background:#25d366;color:#0b2e17}
+@media(hover:hover){.steps-cta .btn:hover{background:#3ee07b}}
+@media(max-width:719px){.steps-cta .btn{width:100%}}
+@media(min-width:900px){
+ .steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+ .steps::before{left:28px;right:28px;top:27px;bottom:auto;width:auto;height:2px}
+ .steps li{padding-left:0;padding-top:74px}
+ .steps li::before{width:56px;height:56px;font-size:1.35rem;box-shadow:0 0 0 8px var(--paper)}
+ .steps h3{font-size:1.35rem}
+}
 
 /* materiales */
 .mats{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
@@ -226,19 +245,28 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,244,239,.94);backdro
 .final h2{font-size:clamp(2rem,4.8vw,3.2rem);max-width:18ch;margin:0 auto}
 .final p{color:rgba(255,255,255,.8);margin:16px auto 30px;max-width:48ch}
 .final .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.contact{display:grid;gap:22px;grid-template-columns:1fr}
-.info{background:var(--white);border:1px solid var(--line);padding:30px}
-.info dl{display:grid;gap:18px}
+.contact{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.info{background:var(--white);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:12px}
+.tbtn{display:flex;align-items:center;gap:14px;padding:16px 18px;text-decoration:none;transition:filter .18s,transform .14s cubic-bezier(.22,1,.36,1)}
+.tbtn:active{transform:scale(.98)}
+.tbtn svg{width:26px;height:26px;flex:none}
+.tbtn b{display:block;font-size:1.15rem}
+.tbtn small{display:block;font-size:.82rem}
+.tbtn.wa{background:#25d366;color:#0b2e17}
+.tbtn.tel{background:var(--deep);color:#fff}
+.tbtn.tel small{color:rgba(255,255,255,.75)}
+@media(hover:hover){.tbtn:hover{filter:brightness(1.08)}}
+.info dl{display:grid;gap:16px;margin-top:12px}
 .info dt{font-size:.85rem;color:var(--muted);font-weight:500}
-.info dd{font-size:1.08rem;font-weight:600;color:var(--deep)}
+.info dd{font-size:1.05rem;font-weight:600;color:var(--deep)}
 .info dd small{display:block;font-weight:400;color:var(--muted);font-size:.9rem}
-.info .btn{margin-top:24px;width:100%}
-.map{position:relative;min-height:340px;overflow:hidden;background:var(--deep)}
+.map{position:relative;min-height:320px;overflow:hidden;background:var(--deep)}
 .map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.map::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,30,33,.9),rgba(6,30,33,.1) 60%)}
-.map div{position:absolute;left:24px;right:24px;bottom:24px;z-index:1;color:#fff}
-.map p{margin-bottom:14px;font-weight:500}
-@media(min-width:860px){.contact{grid-template-columns:1fr 1.3fr}}
+.map::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,30,33,.92),rgba(6,30,33,.05) 60%)}
+.map div{position:absolute;left:22px;right:22px;bottom:22px;z-index:1;color:#fff;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px}
+.map p{font-weight:500;line-height:1.5}
+@media(max-width:719px){.map .btn{width:100%}}
+@media(min-width:860px){.contact{grid-template-columns:420px minmax(0,1fr)}.info{padding:28px}}
 
 footer{background:#061e21;color:rgba(255,255,255,.7);padding:40px 0 110px;font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between}
@@ -262,9 +290,10 @@ footer b{color:#fff;font-family:var(--serif)}
 <header>
  <div class="wrap nav">
   <a class="logo" href="#"><span class="logo-mark">G</span><span><b>Tapisseria Gama</b><small>L'Hospitalet · desde 1991</small></span></a>
-  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#historia">El taller</a></li><li><a href="#taller">Galería</a></li><li><a href="#preguntas">Preguntas</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#historia">El taller</a></li><li><a href="#taller">Trabajos</a></li><li><a href="#preguntas">Preguntas</a></li><li><a href="#contacto">Contacto</a></li></ul>
   <a class="tel" href="tel:+34933389683"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>93 338 96 83</a>
   <a class="btn" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Presupuesto</a>
+  <a class="call" href="tel:+34933389683" aria-label="Llamar al taller, 93 338 96 83"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
  </div>
 </header>
 
@@ -272,41 +301,29 @@ footer b{color:#fff;font-family:var(--serif)}
  <div class="hero-bg"><img src="img/trabajos/01.webp" alt="Chaise longue de terciopelo rojo recién tapizada en el taller" fetchpriority="high"></div>
  <div class="wrap hero-grid">
   <div>
-  <p class="eyebrow">Taller propio en L'Hospitalet · desde 1991</p>
+  <p class="eyebrow">Taller propio · desde 1991</p>
   <h1 id="t">Tu tapicero artesano en <em>L'Hospitalet</em></h1>
-  <p>Desde 1991 tapizamos, restauramos y fabricamos sofás, sillas, sillones y cabeceros en <strong>nuestro propio taller</strong>, con recogida en cualquier zona.</p>
+  <p>Tapizamos, restauramos y fabricamos sofás, sillas, sillones y cabeceros en <strong>nuestro propio taller</strong>. Recogemos en cualquier zona.</p>
   <div class="cta">
-   <a class="btn btn-aqua" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-   <a class="btn btn-line" href="#taller">Ver nuestros trabajos</a>
+   <a class="btn btn-aqua" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7S22.1 26.4 16 26.4z"/></svg><span><span class="lg">Presupuesto por </span>WhatsApp</span></a>
+   <a class="btn btn-line" href="tel:+34933389683"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>Llamar<span class="lg"> al taller</span></span></a>
   </div>
-  <div class="facts">
-   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Más de 30 años de oficio</span>
-   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Fabricación propia</span>
-   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Presupuesto por WhatsApp</span>
+  <p class="hero-tels">WhatsApp 697 526 500 · Taller 93 338 96 83</p>
   </div>
   </div>
  </div>
 </section>
 
-<div class="trust">
- <div class="wrap">
-  <div><b>+30 años</b><span>de oficio en L'Hospitalet</span></div>
-  <div><b>Taller propio</b><span>todo se hace en L'Hospitalet</span></div>
-  <div><b>A medida</b><span>fabricación desde cero</span></div>
-  <div><b>Recogida</b><span>en cualquier zona</span></div>
- </div>
-</div>
-
 <section id="servicios">
  <div class="wrap">
-  <div class="head" data-r><h2>Nuestros servicios <em>artesanales</em></h2><p>Mándanos una foto de tu mueble y te decimos qué se puede hacer, qué tejido le va mejor y cuánto cuesta.</p></div>
+  <div class="svc-head" data-r><div class="head"><h2>Lo que hacemos en el <em>taller</em></h2><p>Mándanos una foto de tu mueble y te decimos qué se puede hacer, qué tejido le va mejor y cuánto cuesta.</p></div><a class="btn btn-deep" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Mandar una foto</a></div>
   <div class="svc">
-   <article data-r><div class="ph"><img src="img/trabajos/01.webp" loading="lazy" alt="Sofá de terciopelo teja recién tapizado"></div><div class="body"><h3>Tapizado de sofás</h3><p>Retapizado completo, cambio de espumas y rellenos, fundas y arreglos de costuras.</p></div></article>
-   <article data-r style="--i:1"><div class="ph"><img src="img/trabajos/06.webp" loading="lazy" alt="Silla tapizada en tela verde con patas negras"></div><div class="body"><h3>Sillas y hostelería</h3><p>Sillas de comedor, juegos completos y sillas de bares y restaurantes.</p></div></article>
-   <article data-r style="--i:2"><div class="ph"><img src="img/trabajos/03.webp" loading="lazy" alt="Butaca de terciopelo granate con flecos"></div><div class="body"><h3>Sillones y butacas</h3><p>Butacas, orejeros y sillones relax, con el tejido o la piel que elijas.</p></div></article>
-   <article data-r><div class="ph"><img src="img/trabajos/04.webp" loading="lazy" alt="Butaca capitoné gris con faldón de flecos"></div><div class="body"><h3>Capitoné y acabados</h3><p>Botonaduras, vivos, flecos y costuras vistas hechos a mano en el taller.</p></div></article>
-   <article data-r style="--i:1"><div class="ph"><img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo marrón terminado en el taller"></div><div class="body"><h3>Fabricación a medida</h3><p>Sofás, cabeceros y piezas hechas desde cero, a la medida de tu casa.</p></div></article>
-   <article data-r style="--i:2"><div class="ph"><img src="img/trabajos/02.webp" loading="lazy" alt="Sofá chester de piel negra con capitoné"></div><div class="body"><h3>Restauración</h3><p>Muebles antiguos y con valor sentimental, respetando su estructura original.</p></div></article>
+   <article data-r><div class="ph"><img src="img/trabajos/01.webp" loading="lazy" alt="Sofá de terciopelo teja recién tapizado"></div><div class="body"><h3>Tapizado de sofás</h3><p>Retapizado completo, espumas y rellenos nuevos, fundas y costuras.</p></div></article>
+   <article data-r style="--i:1"><div class="ph"><img src="img/trabajos/06.webp" loading="lazy" alt="Silla tapizada en tela verde con patas negras"></div><div class="body"><h3>Sillas y hostelería</h3><p>Sillas de comedor y de bares y restaurantes, en juegos completos.</p></div></article>
+   <article data-r style="--i:2"><div class="ph"><img src="img/trabajos/03.webp" loading="lazy" alt="Butaca de terciopelo granate con flecos"></div><div class="body"><h3>Sillones y butacas</h3><p>Butacas, orejeros y sillones relax, en tela o piel.</p></div></article>
+   <article data-r><div class="ph"><img src="img/trabajos/04.webp" loading="lazy" alt="Butaca capitoné gris con faldón de flecos"></div><div class="body"><h3>Capitoné y acabados</h3><p>Botonaduras, vivos, flecos y costuras vistas, a mano.</p></div></article>
+   <article data-r style="--i:1"><div class="ph"><img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo marrón terminado en el taller"></div><div class="body"><h3>Fabricación a medida</h3><p>Sofás, cabeceros y piezas hechas desde cero para tu casa.</p></div></article>
+   <article data-r style="--i:2"><div class="ph"><img src="img/trabajos/02.webp" loading="lazy" alt="Sofá chester de piel negra con capitoné"></div><div class="body"><h3>Restauración</h3><p>Muebles antiguos y con valor sentimental, respetando su estructura.</p></div></article>
   </div>
  </div>
 </section>
@@ -381,13 +398,17 @@ footer b{color:#fff;font-family:var(--serif)}
 
 <section id="historia">
  <div class="wrap story">
-  <img src="img/trabajos/14.webp" loading="lazy" alt="Sofá curvo terminado en el taller de L'Hospitalet" data-r>
+  <div class="collage" data-r>
+   <img src="img/trabajos/22.webp" loading="lazy" alt="Sofá a medida en fase de espumas, en el taller">
+   <img src="img/trabajos/24.webp" loading="lazy" alt="Estructura de un sofá rinconera con las cinchas puestas">
+   <img src="img/trabajos/25.webp" loading="lazy" alt="Armazón curvo de madera de un sofá">
+  </div>
   <div data-r style="--i:1">
    <p class="eyebrow" style="color:var(--teal);margin:0">Desde 1991</p>
-   <h2 style="font-size:clamp(2rem,4.6vw,3rem);color:var(--deep);margin-top:12px">Un taller de <em style="color:var(--teal)">barrio</em>, con oficio de verdad</h2>
-   <p>Cada pieza se trabaja a mano en nuestro taller de L'Hospitalet: desmontamos, revisamos muelles, cinchas y espumas, y tapizamos con el tejido que elijas.</p>
-   <p>Más de treinta años arreglando los sofás y las sillas del barrio, de casas y de negocios.</p>
-   <a class="btn btn-deep" style="margin-top:26px" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Cuéntanos qué mueble tienes</a>
+   <h2>Un taller de <em>barrio</em>, con oficio de verdad</h2>
+   <p>Cada pieza se hace a mano en nuestro taller de L'Hospitalet: montamos la madera, ponemos cinchas y espumas, y tapizamos con el tejido que elijas.</p>
+   <div class="stats"><div><b>+30</b><span>años de oficio</span></div><div><b>Propio</b><span>taller y fabricación</span></div><div><b>Recogida</b><span>en cualquier zona</span></div></div>
+   <a class="btn btn-deep" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Cuéntanos qué mueble tienes</a>
   </div>
  </div>
 </section>
@@ -412,17 +433,18 @@ footer b{color:#fff;font-family:var(--serif)}
 
 <section class="proc" id="proceso">
  <div class="wrap">
-  <div class="head center" data-r><h2>Un proceso <em>sencillo</em></h2><p>Sin sorpresas: sabes el precio antes de empezar.</p></div>
-  <ol class="steps">
-   <li data-r><h3>Nos escribes</h3><p>Mándanos por WhatsApp una foto del mueble y unas medidas aproximadas.</p></li>
-   <li data-r style="--i:1"><h3>Presupuesto</h3><p>Te proponemos tejido y acabado, y te damos el precio cerrado.</p></li>
-   <li data-r style="--i:2"><h3>Al taller</h3><p>Pasamos a recogerlo en cualquier zona, o lo traes tú al taller.</p></li>
-   <li data-r style="--i:3"><h3>Listo</h3><p>Te avisamos cuando está terminado y quedamos para la entrega.</p></li>
+  <div class="head center" data-r><h2>Así de <em>sencillo</em></h2><p>Sabes el precio antes de empezar. Sin sorpresas.</p></div>
+  <ol class="steps" data-r>
+   <li><h3>Nos mandas una foto</h3><p>Por WhatsApp, con unas medidas aproximadas del mueble.</p></li>
+   <li><h3>Precio cerrado</h3><p>Te proponemos tejido y acabado, y te damos el precio.</p></li>
+   <li><h3>Lo recogemos</h3><p>En cualquier zona, o lo traes tú al taller.</p></li>
+   <li><h3>Te lo devolvemos</h3><p>Te avisamos cuando está listo y quedamos para la entrega.</p></li>
   </ol>
+  <p class="steps-cta"><a class="btn" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7S22.1 26.4 16 26.4z"/></svg>Empezar por WhatsApp</a></p>
  </div>
 </section>
 
-<section id="materiales">
+<section id="materiales" style="background:var(--white)">
  <div class="wrap">
   <div class="head" data-r><h2>Tú eliges el <em>tejido</em></h2><p>Te enseñamos muestrarios en el taller para que lo veas y lo toques.</p></div>
   <div class="telas" data-r>
@@ -458,19 +480,19 @@ footer b{color:#fff;font-family:var(--serif)}
  </div>
 </section>
 
-<section id="contacto">
+<section id="contacto" style="background:var(--white)">
  <div class="wrap">
   <div class="head" data-r><h2>Ven al <em>taller</em> o escríbenos</h2></div>
   <div class="contact">
    <div class="info" data-r>
+    <a class="tbtn wa" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7S22.1 26.4 16 26.4z"/></svg><span><b>697 526 500</b><small>WhatsApp y móvil</small></span></a>
+    <a class="tbtn tel" href="tel:+34933389683"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span><b>93 338 96 83</b><small>Teléfono del taller</small></span></a>
     <dl>
      <div><dt>Dirección</dt><dd>Av. Mare de Déu de Bellvitge, 325<small>08907 L'Hospitalet de Llobregat (Barcelona)</small></dd></div>
-     <div><dt>Teléfonos</dt><dd><a href="tel:+34697526500">697 526 500</a> <small>Móvil y WhatsApp</small></dd><dd><a href="tel:+34933389683">93 338 96 83</a> <small>Taller</small></dd></div>
      <div><dt>Horario</dt><dd>Lunes a viernes, 7:00 – 18:00<small>Sábados con cita previa · domingo cerrado</small></dd></div>
     </dl>
-    <a class="btn btn-aqua" href="https://wa.me/34697526500?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20quiero%20pedir%20presupuesto." target="_blank" rel="noopener">Escribir por WhatsApp</a>
    </div>
-   <div class="map" data-r style="--i:1"><img src="img/trabajos/26.webp" loading="lazy" alt="El taller de Tapisseria Gama en plena faena"><div><p>Av. Mare de Déu de Bellvitge, 325<br>L'Hospitalet de Llobregat</p><a class="btn btn-aqua" href="https://www.google.com/maps/dir/?api=1&amp;destination=Tapisseria+Gama%2C+Av.+Mare+de+D%C3%A9u+de+Bellvitge+325%2C+08907+L%27Hospitalet+de+Llobregat" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+   <div class="map" data-r style="--i:1"><img src="img/trabajos/26.webp" loading="lazy" alt="El taller de Tapisseria Gama en plena faena"><div><p>Av. Mare de Déu de Bellvitge, 325<br>L'Hospitalet de Llobregat</p><a class="btn btn-aqua" href="https://www.google.com/maps/dir/?api=1&amp;destination=Tapisseria+Gama%2C+Av.+Mare+de+D%C3%A9u+de+Bellvitge+325%2C+08907+L%27Hospitalet+de+Llobregat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</a></div></div>
   </div>
  </div>
 </section>
