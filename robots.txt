@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /version*.html
+Disallow: /nueva.html
+
+Sitemap: https://tapisseriagama.es/sitemap.xml
